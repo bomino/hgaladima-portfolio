@@ -18,7 +18,7 @@ My research program sits at the intersection of **statistical methodology** and 
 
 **Methods for confounding & propensity scores.** My doctoral work on propensity-score methods when association is measured by AUC remains active — in subsequent publications I've shown that naive propensity-score adjustment can bias the conditional AUC, a subtle but consequential finding for diagnostic-accuracy studies in observational data.
 
-**By the numbers**: 20 peer-reviewed journal articles, 19 published abstracts, 54 conference presentations, 8 invited talks. PI on 9 awarded grants and Co-Investigator on 6 additional federally- and privately-funded projects.
+**By the numbers**: 20 peer-reviewed journal articles, 19 published abstracts, 54 conference presentations, 8 invited talks. Principal Investigator on 9 awarded grants in cancer, machine-learning, and health-disparities research.
 
 ## Selected publications
 
@@ -110,24 +110,17 @@ My research program sits at the intersection of **statistical methodology** and 
 
 ## Selected grants
 
-**As Principal Investigator:**
-
-- **Knowledge, Attitude, and Perceived Barriers towards Breast Cancer Screening among Female African Immigrants** — Johns Hopkins University (2025–2026). *(Faculty Mentor with PhD candidate Rexford Anson-Dwamena.)*
+- **Knowledge, Attitude, and Perceived Barriers towards Breast Cancer Screening among Female African Immigrants** — Johns Hopkins University (2025–2026).
 - **Predicting Health Outcomes Among Cancer Patients in Virginia: A Population-Based Machine Learning Approach** — ODU School of Public Health Initiatives Intramural Grant (2023–2024).
-- **Assessing Occupational Stress Among Lactation Consultants** — ODU SPH Intramural Grant (2023–2024).
+- **Examining the Role of Neighborhood Characteristics on Geographic Variation in Colorectal Cancer: Spatial Analysis, Hierarchical Modeling, and Machine Learning Approaches** — ODU SPH Intramural Grant (2022).
 - **Assessing the Impacts of the COVID-19 Pandemic on U.S. Hispanic/Latino Farmworkers** — Johns Hopkins University (2021–2023).
-
-**As Co-Investigator:**
-
-- **Targeting Brain Macrophage Reservoirs of SIV during HAART** — NIH/NIMH (PI: Kim), 2015–2018.
-- **Social and Spatial Determinants of Melanoma in Hispanics** — NIH/NIMHD (PI: Harvey), 2015–2017.
-- **The Hampton Roads Academic Health Collaboration** — Chesapeake Health Department (PI: Kekeh), 2024–2025.
+- **Understanding the Implications of Environmental Exposures in Colorectal Cancer Mortality in Virginia** — Mary Louise Andrews Award for Cancer Research, Virginia Academy of Science (2019–2020).
+- **Individual and Neighborhood Predictors of Late-Stage Colorectal Cancer and Mortality, Virginia 2008–2016** — EVMS Sentara Healthcare Analytics and Delivery Science Institute (2017–2018).
 
 ## Current projects
 
 - **Breast cancer recurrence prediction** (ongoing): machine-learning approaches to population-based surveillance strategies. Presented at APHA 2025.
 - **Racial and ethnic disparities in breast cancer recurrence** (ongoing): population-based cohort analysis, Virginia. Presented at APHA 2025.
-- **Cervical cancer screening uptake** — *All of Us* Research Program analysis (Co-PI; submitted 2025).
 
 ## Dissertation committee chair
 
