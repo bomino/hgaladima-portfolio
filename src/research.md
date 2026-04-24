@@ -22,19 +22,27 @@ My research program sits at the intersection of **statistical methodology** and 
 
 ## Publications
 
-<p class="research-note"><em>All {{ publications.publications.length }} peer-reviewed journal articles. Each paper has its own page with summary, citation-ready BibTeX &amp; RIS export, and DOI link. Newest first.</em></p>
+<p class="research-note"><em>All {{ publications.publications.length }} peer-reviewed journal articles. Each title links to its own page with plain-English summary and citation-ready BibTeX &amp; RIS export. Grouped by year, newest first.</em></p>
 
-<ol class="pub-list">
+{% set currentYear = 0 %}
+<ul class="pub-list">
 {% for pub in publications.publications %}
+  {% if pub.year != currentYear %}
+    {% set currentYear = pub.year %}
+<li class="pub-year-label">{{ pub.year }}</li>
+  {% endif %}
 <li class="pub-entry">
-<span class="pub-authors">{% for a in pub.authors %}{{ a }}{% if not loop.last %}{% if loop.revindex0 == 1 %}, &amp; {% else %}, {% endif %}{% endif %}{% endfor %}</span>
-(<span class="pub-year">{{ pub.year }}</span>).
-<a href="/research/pub/{{ pub.slug }}/" class="pub-title-link"><span class="pub-title">{{ pub.title }}.</span></a>
-<span class="pub-venue"><em>{{ pub.journal }}</em>{% if pub.volume %}, {{ pub.volume }}{% if pub.issue %}({{ pub.issue }}){% endif %}{% endif %}{% if pub.pages %}, {{ pub.pages }}{% endif %}.</span>
-{% if pub.doi %}<a href="{{ pub.url }}" class="pub-doi-link" rel="external">doi:{{ pub.doi }}</a>{% endif %}
+  <h3 class="pub-entry-title"><a href="/research/pub/{{ pub.slug }}/">{{ pub.title }}</a></h3>
+  <p class="pub-entry-authors">{% for a in pub.authors %}<span class="pub-entry-author{% if a.startsWith('Galadima') %} is-self{% endif %}">{{ a }}</span>{% if not loop.last %}{% if loop.revindex0 == 1 %}, &amp; {% else %}, {% endif %}{% endif %}{% endfor %}</p>
+  <p class="pub-entry-venue"><em>{{ pub.journal }}</em>{% if pub.volume %}, {{ pub.volume }}{% if pub.issue %}({{ pub.issue }}){% endif %}{% endif %}{% if pub.pages %}, {{ pub.pages }}{% endif %}</p>
+  {% if pub.summary %}<p class="pub-entry-summary">{{ pub.summary }}</p>{% endif %}
+  <p class="pub-entry-footer">
+    {% if pub.tags and pub.tags.length %}<span class="pub-entry-tags">{% for tag in pub.tags %}<span class="pub-entry-tag">#{{ tag }}</span>{% endfor %}</span>{% endif %}
+    {% if pub.doi %}<a href="{{ pub.url }}" class="pub-entry-doi" rel="external">doi:{{ pub.doi }}</a>{% endif %}
+  </p>
 </li>
 {% endfor %}
-</ol>
+</ul>
 
 ## Selected grants
 

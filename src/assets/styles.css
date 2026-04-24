@@ -1040,47 +1040,142 @@ img, svg, video {
     font-size: var(--step--1);
 }
 
-/* -------- Research / CV niceties -------- */
-
+/* -------- Research page — richer publication list --------
+ * Year-grouped list with title + authors + venue + summary + tags + DOI
+ * per entry. Keeps the academic list convention (peer faculty sites use
+ * lists, not cards) while adding scannability via year headers, plain-
+ * English summaries, and topic-tag chips. Mirrors the magazine-style
+ * pattern from the blog index.
+ */
 .pub-list {
     list-style: none;
     padding: 0;
     margin: var(--space-l) 0;
-    counter-reset: pub;
 }
 
-.pub-entry {
-    position: relative;
-    padding: var(--space-m) 0 var(--space-m) var(--space-xl);
-    border-bottom: 1px solid var(--divider);
-    counter-increment: pub;
-}
-
-.pub-entry::before {
-    content: counter(pub, decimal-leading-zero);
-    position: absolute;
-    left: 0;
-    top: var(--space-m);
+/* Year labels (one per distinct year) — visual grouping inside the <ul> */
+.pub-year-label {
     font-family: var(--font-display);
     font-variation-settings: "opsz" 96, "SOFT" 0;
-    font-size: var(--step-1);
+    font-size: var(--step-3);
+    font-weight: 400;
+    letter-spacing: -0.02em;
     color: var(--warm);
+    margin: var(--space-xl) 0 var(--space-s);
+    padding-top: var(--space-m);
+    border-top: 1px solid var(--divider);
     font-feature-settings: "tnum";
+    line-height: 1;
 }
 
-.pub-entry:last-child { border-bottom: 0; }
+.pub-year-label:first-child {
+    border-top: 0;
+    margin-top: 0;
+    padding-top: 0;
+}
 
-.pub-title {
+/* Each publication entry */
+.pub-entry {
+    padding: var(--space-m) 0 var(--space-l);
+    border-bottom: 1px solid var(--divider);
+}
+
+.pub-entry:last-child {
+    border-bottom: 0;
+}
+
+.pub-entry-title {
     font-family: var(--font-display);
-    font-variation-settings: "opsz" 24, "SOFT" 0;
-    font-weight: 500;
-    font-size: var(--step-0);
-    display: block;
+    font-variation-settings: "opsz" 48, "SOFT" 0;
+    font-size: var(--step-1);
+    font-weight: 400;
+    letter-spacing: -0.015em;
+    line-height: 1.2;
+    margin: 0 0 var(--space-2xs);
+    text-wrap: balance;
+}
+
+.pub-entry-title a {
+    color: var(--ink-strong);
+    border-bottom: none;
+    text-decoration: none;
+    transition: color var(--dur-fast) var(--ease-out);
+}
+
+.pub-entry-title a:hover {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.pub-entry-authors {
+    font-size: var(--step--1);
+    color: var(--ink);
     margin: var(--space-2xs) 0;
+    line-height: 1.5;
+}
+
+.pub-entry-author.is-self {
+    font-weight: 600;
     color: var(--ink-strong);
 }
 
-.pub-venue { color: var(--ink-muted); }
+.pub-entry-venue {
+    font-size: var(--step--1);
+    color: var(--ink-muted);
+    margin: var(--space-2xs) 0;
+    line-height: 1.4;
+}
+
+.pub-entry-summary {
+    font-family: var(--font-display);
+    font-variation-settings: "opsz" 18, "SOFT" 20;
+    font-style: italic;
+    font-size: var(--step-0);
+    line-height: 1.45;
+    color: var(--ink-muted);
+    max-width: 60ch;
+    margin: var(--space-xs) 0;
+}
+
+.pub-entry-footer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+    align-items: baseline;
+    margin: var(--space-s) 0 0;
+    font-size: var(--step--1);
+}
+
+.pub-entry-tags {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: var(--space-2xs);
+}
+
+.pub-entry-tag {
+    color: var(--warm);
+    font-weight: 500;
+    font-size: var(--step--1);
+}
+
+.pub-entry-doi {
+    font-family: var(--font-mono);
+    font-size: 0.92em;
+    color: var(--ink-muted);
+    margin-left: auto;
+    border-bottom: none;
+    transition: color var(--dur-fast) var(--ease-out);
+}
+
+.pub-entry-doi:hover {
+    color: var(--accent);
+}
+
+@media (max-width: 560px) {
+    .pub-entry-doi {
+        margin-left: 0;
+    }
+}
 
 .cv-download {
     margin: var(--space-m) 0 var(--space-xs);
@@ -1382,28 +1477,6 @@ img, svg, video {
     padding-top: var(--space-m);
     border-top: 1px solid var(--divider);
     font-size: var(--step--1);
-}
-
-/* Research page — publication list pointing at per-paper pages */
-.pub-title-link {
-    color: var(--ink-strong);
-    border-bottom: none;
-    text-decoration: none;
-    transition: color var(--dur-fast) var(--ease-out);
-}
-
-.pub-title-link:hover {
-    color: var(--accent);
-    text-decoration: none;
-}
-
-.pub-title-link:hover .pub-title {
-    color: var(--accent);
-}
-
-.pub-doi-link {
-    font-family: var(--font-mono);
-    font-size: 0.92em;
 }
 
 /* -------- Print stylesheet (primarily for /cv/) --------
