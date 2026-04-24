@@ -112,16 +112,16 @@ My research program sits at the intersection of **statistical methodology** and 
 
 **As Principal Investigator:**
 
-- **Knowledge, Attitude, and Perceived Barriers towards Breast Cancer Screening among Female African Immigrants** — Johns Hopkins University, $15,000 (2025–2026). *(Faculty Mentor with PhD candidate Rexford Anson-Dwamena.)*
-- **Predicting Health Outcomes Among Cancer Patients in Virginia: A Population-Based Machine Learning Approach** — ODU School of Public Health Initiatives Intramural Grant, $24,309 (2023–2024).
-- **Assessing Occupational Stress Among Lactation Consultants** — ODU SPH Intramural Grant, $18,505 (2023–2024).
-- **Assessing the Impacts of the COVID-19 Pandemic on U.S. Hispanic/Latino Farmworkers** — Johns Hopkins University, $9,500 (2021–2023).
+- **Knowledge, Attitude, and Perceived Barriers towards Breast Cancer Screening among Female African Immigrants** — Johns Hopkins University (2025–2026). *(Faculty Mentor with PhD candidate Rexford Anson-Dwamena.)*
+- **Predicting Health Outcomes Among Cancer Patients in Virginia: A Population-Based Machine Learning Approach** — ODU School of Public Health Initiatives Intramural Grant (2023–2024).
+- **Assessing Occupational Stress Among Lactation Consultants** — ODU SPH Intramural Grant (2023–2024).
+- **Assessing the Impacts of the COVID-19 Pandemic on U.S. Hispanic/Latino Farmworkers** — Johns Hopkins University (2021–2023).
 
 **As Co-Investigator:**
 
-- **Targeting Brain Macrophage Reservoirs of SIV during HAART** — NIH/NIMH (PI: Kim), $3,137,369 (2015–2018).
-- **Social and Spatial Determinants of Melanoma in Hispanics** — NIH/NIMHD (PI: Harvey), $250,000 (2015–2017).
-- **The Hampton Roads Academic Health Collaboration** — Chesapeake Health Department (PI: Kekeh), $10,000 (2024–2025).
+- **Targeting Brain Macrophage Reservoirs of SIV during HAART** — NIH/NIMH (PI: Kim), 2015–2018.
+- **Social and Spatial Determinants of Melanoma in Hispanics** — NIH/NIMHD (PI: Harvey), 2015–2017.
+- **The Hampton Roads Academic Health Collaboration** — Chesapeake Health Department (PI: Kekeh), 2024–2025.
 
 ## Current projects
 
