@@ -28,8 +28,8 @@ I take on a limited number of **statistical-consulting engagements** each year i
 - Machine-learning modeling for health outcomes and cancer-disparities research
 - Propensity-score methods and causal inference from observational data
 
-Engagements typically run from single consults to multi-month collaborations. For inquiries — including scope, timeline, and rate — email <a href="mailto:hgaladima@gmail.com">hgaladima@gmail.com</a> with a brief description of the project.
+Engagements typically run from single consults to multi-month collaborations. For inquiries — including scope, timeline, and rate — email <a href="mailto:consulting@hgaladima.com">consulting@hgaladima.com</a> with a brief description of the project.
 
 ## About the Z-t-Chi Calculator
 
-If you have a question about the [Z-t-Chi Calculator](https://ztchi.hgaladima.com/) — a bug report, a feature request, adopting it for your own course, or access to the instructor builder at [teach.hgaladima.com](https://teach.hgaladima.com/) — email <a href="mailto:hgaladima@gmail.com">hgaladima@gmail.com</a> with "Z-t-Chi" in the subject line.
+If you have a question about the [Z-t-Chi Calculator](https://ztchi.hgaladima.com/) — a bug report, a feature request, adopting it for your own course, or access to the instructor builder at [teach.hgaladima.com](https://teach.hgaladima.com/) — email <a href="mailto:info@hgaladima.com">info@hgaladima.com</a> with "Z-t-Chi" in the subject line.

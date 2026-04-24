@@ -8,7 +8,7 @@ module.exports = {
     shortName: 'Hadiza Galadima',
     role: 'Biostatistics · Public Health · Pedagogy',
     tagline: 'Associate Professor of Biostatistics at Old Dominion University. Research and teaching at the intersection of statistical methods, public-health disparities, and open educational tools.',
-    email: 'hgaladima@gmail.com',
+    email: 'info@hgaladima.com',
 
     // Identity — thread into Person JSON-LD sameAs for Google's Knowledge
     // Graph. Each populated value strengthens the entity linkage between
