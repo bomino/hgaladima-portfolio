@@ -18,7 +18,7 @@ My research program sits at the intersection of **statistical methodology** and 
 
 **Methods for confounding & propensity scores.** My doctoral work on propensity-score methods when association is measured by AUC remains active — in subsequent publications I've shown that naive propensity-score adjustment can bias the conditional AUC, a subtle but consequential finding for diagnostic-accuracy studies in observational data.
 
-**By the numbers**: 20 peer-reviewed journal articles, 19 published abstracts, 54 conference presentations, 8 invited talks. PI on 9 awarded grants (~$114K) and Co-Investigator on 6 totaling $3.85M — roughly $3.97M in cumulative funded work.
+**By the numbers**: 20 peer-reviewed journal articles, 19 published abstracts, 54 conference presentations, 8 invited talks. PI on 9 awarded grants and Co-Investigator on 6 additional federally- and privately-funded projects.
 
 ## Selected publications
 

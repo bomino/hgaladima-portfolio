@@ -44,23 +44,23 @@ schemaType: WebPage
 
 See [Research](/research/) for recent highlights or the [full CV](/assets/galadima-cv.docx) for the complete list.
 
-## Grants & funding (cumulative: ~$3.97M)
+## Grants & funding
 
-- Principal Investigator on **9 awarded grants** totaling ~$114,000
-- Co-Investigator on **6 awarded grants** totaling ~$3.85M
-- Contributor to 22 grant applications totaling ~$9.97M in requested funding
+- Principal Investigator on **9 awarded grants**
+- Co-Investigator on **6 awarded grants**
+- Contributor to 22 grant applications
 
 **Selected awards as PI:**
 
-- *Predicting Health Outcomes Among Cancer Patients in Virginia: A Population-Based Machine Learning Approach* — ODU SPH Intramural Grant, $24,309 (2023–2024)
-- *Assessing Occupational Stress Among Lactation Consultants* — ODU SPH Intramural Grant, $18,505 (2023–2024)
-- *Knowledge, Attitude, and Perceived Barriers towards Breast Cancer Screening among Female African Immigrants* — Johns Hopkins University, $15,000 (2025–2026)
-- *Assessing the Impacts of the COVID-19 Pandemic on U.S. Hispanic/Latino Farmworkers* — Johns Hopkins University, $9,500 (2021–2023)
+- *Predicting Health Outcomes Among Cancer Patients in Virginia: A Population-Based Machine Learning Approach* — ODU SPH Intramural Grant (2023–2024)
+- *Assessing Occupational Stress Among Lactation Consultants* — ODU SPH Intramural Grant (2023–2024)
+- *Knowledge, Attitude, and Perceived Barriers towards Breast Cancer Screening among Female African Immigrants* — Johns Hopkins University (2025–2026)
+- *Assessing the Impacts of the COVID-19 Pandemic on U.S. Hispanic/Latino Farmworkers* — Johns Hopkins University (2021–2023)
 
 **Selected awards as Co-I:**
 
-- *Targeting Brain Macrophage Reservoirs of SIV during HAART* — NIH/NIMH, $3.14M (2015–2018)
-- *Social and Spatial Determinants of Melanoma in Hispanics* — NIH/NIMHD, $250,000 (2015–2017)
+- *Targeting Brain Macrophage Reservoirs of SIV during HAART* — NIH/NIMH (2015–2018)
+- *Social and Spatial Determinants of Melanoma in Hispanics* — NIH/NIMHD (2015–2017)
 
 ## Honors & awards
 
