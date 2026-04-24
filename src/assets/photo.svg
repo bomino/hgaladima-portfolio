@@ -1,12 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" width="180" height="180" role="img" aria-label="Placeholder portrait">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" width="400" height="500" role="img" aria-label="Placeholder portrait — replace with a real headshot">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#1976d2"/>
       <stop offset="100%" stop-color="#c77d11"/>
     </linearGradient>
   </defs>
-  <rect width="180" height="180" fill="url(#bg)"/>
-  <circle cx="90" cy="72" r="32" fill="#ffffff" opacity="0.92"/>
-  <path d="M 30 180 Q 30 120 90 120 Q 150 120 150 180 Z" fill="#ffffff" opacity="0.92"/>
-  <text x="50%" y="93%" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#ffffff" opacity="0.7">placeholder — replace with real photo</text>
+  <rect width="400" height="500" fill="url(#bg)"/>
+  <circle cx="200" cy="200" r="80" fill="#ffffff" opacity="0.92"/>
+  <path d="M 60 500 Q 60 340 200 340 Q 340 340 340 500 Z" fill="#ffffff" opacity="0.92"/>
+  <text x="50%" y="94%" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" fill="#ffffff" opacity="0.6">placeholder — replace /assets/photo.svg with photo.jpg</text>
 </svg>

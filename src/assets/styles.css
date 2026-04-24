@@ -401,17 +401,29 @@ img, svg, video {
 
 .layout-prose h1 { margin-bottom: var(--space-m); }
 
-/* -------- Hero — poster-style -------- */
+/* -------- Hero — editorial split (text + portrait) -------- */
 
 .hero {
-    padding: clamp(4rem, 6vw, 8rem) 0 clamp(3rem, 5vw, 6rem);
+    padding: clamp(3rem, 6vw, 7rem) 0 clamp(3rem, 5vw, 6rem);
     position: relative;
-    overflow: hidden;
 }
 
 .hero-inner {
-    position: relative;
-    z-index: 1;
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+    gap: clamp(var(--space-l), 6vw, var(--space-3xl));
+    align-items: center;
+}
+
+@media (max-width: 860px) {
+    .hero-inner {
+        grid-template-columns: 1fr;
+        gap: var(--space-xl);
+    }
+}
+
+.hero-text {
+    min-width: 0;
 }
 
 .hero-eyebrow {
@@ -471,28 +483,64 @@ img, svg, video {
     align-items: center;
 }
 
-.hero-mark {
+/* Portrait — editorial frame with offset warm shadow block behind.
+   The ::before creates the colored "shadow" card that peeks out at a
+   warm-accented corner, giving the photo a confident magazine-style lift
+   without being clichéd. */
+.hero-portrait {
+    position: relative;
+    margin: 0;
+    aspect-ratio: 4 / 5;
+    max-width: 22rem;
+    width: 100%;
+    justify-self: end;
+}
+
+.hero-portrait::before {
+    content: "";
     position: absolute;
-    top: 50%;
-    right: calc(var(--space-m) * -1);
-    transform: translateY(-50%);
-    width: clamp(240px, 32vw, 420px);
-    height: auto;
+    inset: 0;
+    border-radius: var(--radius-lg);
+    background: var(--warm);
+    transform: translate(0.9rem, 0.9rem);
     opacity: 0.18;
-    color: var(--accent);
+    transition: transform var(--dur-slow) var(--ease-out),
+                opacity var(--dur-slow) var(--ease-out);
     z-index: 0;
-    pointer-events: none;
+}
+
+.hero-portrait:hover::before {
+    transform: translate(1.2rem, 1.2rem);
+    opacity: 0.28;
+}
+
+.hero-portrait img {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--divider);
+    background: var(--surface);
+    box-shadow: var(--shadow);
+    transition: transform var(--dur-slow) var(--ease-out);
+    display: block;
+}
+
+.hero-portrait:hover img {
+    transform: translate(-2px, -2px);
 }
 
 @media (prefers-color-scheme: dark) {
-    .hero-mark { opacity: 0.22; }
+    .hero-portrait::before { opacity: 0.22; }
+    .hero-portrait:hover::before { opacity: 0.35; }
 }
 
-@media (max-width: 900px) {
-    .hero-mark {
-        opacity: 0.08;
-        right: -10%;
-        width: 80%;
+@media (max-width: 860px) {
+    .hero-portrait {
+        justify-self: start;
+        max-width: 16rem;
     }
 }
 
