@@ -1,0 +1,22 @@
+# Build output
+_site/
+
+# Node
+node_modules/
+npm-debug.log*
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Claude Code session artifacts
+.claude/
+
+# Cloudflare Pages local state
+.wrangler/
+.dev.vars

@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="{{ seo.language }}">
+<head>
+  {% include "head.njk" %}
+</head>
+<body>
+  {% include "header.njk" %}
+  <main id="main" class="site-main">
+    {{ content | safe }}
+  </main>
+  {% include "footer.njk" %}
+</body>
+</html>

@@ -1,0 +1,46 @@
+# Decap CMS configuration — hgaladima.com
+#
+# Backend: GitHub via Netlify's free OAuth relay (no Netlify account required).
+# See docs/decap-cms-setup.md for the one-time GitHub OAuth app registration.
+#
+# UPDATE the `repo` line below to your actual GitHub owner/repo-name.
+
+backend:
+  name: github
+  repo: bomino/hgaladima-portfolio
+  branch: main
+  base_url: https://api.netlify.com
+  auth_endpoint: auth
+
+site_url: https://hgaladima.com
+display_url: https://hgaladima.com
+logo_url: https://hgaladima.com/assets/icon.svg
+
+media_folder: src/assets/blog
+public_folder: /assets/blog
+
+collections:
+  - name: blog
+    label: Blog posts
+    folder: src/blog
+    create: true
+    format: frontmatter
+    slug: "{{year}}-{{month}}-{{slug}}"
+    filter:
+      field: layout
+      value: post.njk
+    fields:
+      - { name: layout, label: Layout, widget: hidden, default: post.njk }
+      - { name: title, label: Title, widget: string }
+      - { name: date, label: Publish date, widget: datetime }
+      - { name: summary, label: Summary (1-2 sentences, shows in blog index and search results), widget: text }
+      - name: tags
+        label: Tags
+        widget: list
+        default: ['teaching']
+        summary: '{{fields.tag}}'
+        field: { name: tag, label: Tag, widget: string }
+      - { name: ogImage, label: Social preview image (optional, 1200×630 recommended), widget: image, required: false }
+      - { name: permalink, label: URL slug (start and end with /), widget: string, required: false, hint: "Leave empty to auto-generate from title" }
+      - { name: draft, label: Draft (uncheck to publish), widget: boolean, default: true }
+      - { name: body, label: Post body, widget: markdown }

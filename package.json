@@ -1,0 +1,19 @@
+{
+  "name": "hgaladima-portfolio",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Personal portfolio + blog for Dr. Hadiza Galadima — Eleventy static site served from hgaladima.com via Cloudflare Pages.",
+  "scripts": {
+    "build": "eleventy",
+    "dev": "eleventy --serve --port=8080",
+    "clean": "node -e \"require('fs').rmSync('_site',{recursive:true,force:true})\""
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "markdown-it": "^14.1.0",
+    "markdown-it-anchor": "^9.2.0"
+  }
+}

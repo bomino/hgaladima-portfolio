@@ -1,0 +1,31 @@
+---
+layout: base.njk
+title: Blog
+description: Teaching notes, pedagogy reflections, and research-in-progress from Dr. Hadiza Galadima. Biostatistics, public health, and applied statistical reasoning.
+permalink: /blog/
+schemaType: CollectionPage
+---
+
+<article class="post-index">
+  <header class="post-index-header">
+    <h1 class="post-index-title">Blog</h1>
+    <p class="post-index-kicker">Teaching notes, pedagogy reflections, and research-in-progress. Written for fellow educators and my own students.</p>
+  </header>
+
+  <ul class="post-index-list">
+    {% for post in collections.posts | reverse %}
+      <li class="post-index-item">
+        <a href="{{ post.url }}" class="post-index-link">
+          <time class="post-index-date" datetime="{{ post.date | isoDate }}">{{ post.date | readableDate }}</time>
+          <h2 class="post-index-item-title">{{ post.data.title }}</h2>
+          {% if post.data.summary %}<p class="post-index-summary">{{ post.data.summary }}</p>{% endif %}
+          {% if post.data.tags and post.data.tags.length %}
+            <p class="post-index-tags">{% for tag in post.data.tags %}<span class="post-tag">#{{ tag }}</span> {% endfor %}</p>
+          {% endif %}
+        </a>
+      </li>
+    {% else %}
+      <li class="post-index-empty">No posts yet. Check back soon.</li>
+    {% endfor %}
+  </ul>
+</article>

@@ -1,0 +1,61 @@
+---
+layout: base.njk
+title: Dr. Hadiza Galadima — Biostatistics, Public Health, Pedagogy
+description: Dr. Hadiza Galadima — biostatistician at Old Dominion University. Research on statistical methods for public health, teaching of applied biostatistics, and open tools for students.
+schemaType: Person
+---
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-photo-wrap">
+      <img src="/assets/photo.svg" alt="Portrait of {{ site.name }}" class="hero-photo" width="180" height="180">
+    </div>
+    <div class="hero-text">
+      <p class="hero-kicker">{{ site.affiliation.department }} · {{ site.affiliation.name }}</p>
+      <h1 class="hero-name">{{ site.name }}</h1>
+      <p class="hero-role">{{ site.role }}</p>
+      <p class="hero-tagline">{{ site.tagline }}</p>
+      <p class="hero-actions">
+        <a href="/research/" class="button button-primary">Research</a>
+        <a href="/teaching/" class="button button-secondary">Teaching</a>
+        <a href="/cv/" class="button button-ghost">CV</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="cards">
+  <div class="cards-inner">
+    <article class="card">
+      <h2 class="card-title"><a href="/research/">Research</a></h2>
+      <p class="card-description">UPDATE: 1–2 sentence summary of your research focus — e.g., methods for small-sample inference in community-health studies, collaboration with epidemiologists on outcome evaluation.</p>
+    </article>
+
+    <article class="card">
+      <h2 class="card-title"><a href="/teaching/">Teaching</a></h2>
+      <p class="card-description">MPHO 605 (Biostatistics) and open-source tools for graduate public-health education. Free calculators at <a href="https://ztchi.hgaladima.com/" rel="noopener">ztchi.hgaladima.com</a>.</p>
+    </article>
+
+    <article class="card">
+      <h2 class="card-title"><a href="/blog/">Writing</a></h2>
+      <p class="card-description">Teaching notes, pedagogy reflections, and research-in-progress essays. Unpolished on purpose — this is where ideas develop.</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-recent">
+  <div class="section-inner">
+    <h2 class="section-title">Recent posts</h2>
+    <ul class="post-list">
+      {% for post in collections.posts | reverse | slice(0, 3) %}
+        <li class="post-list-item">
+          <a href="{{ post.url }}">
+            <span class="post-list-date"><time datetime="{{ post.date | isoDate }}">{{ post.date | readableDate }}</time></span>
+            <span class="post-list-title">{{ post.data.title }}</span>
+          </a>
+          {% if post.data.summary %}<p class="post-list-summary">{{ post.data.summary }}</p>{% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+    <p><a href="/blog/" class="link-more">All posts &rarr;</a></p>
+  </div>
+</section>
