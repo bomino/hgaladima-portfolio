@@ -20,92 +20,20 @@ My research program sits at the intersection of **statistical methodology** and 
 
 **By the numbers**: 20 peer-reviewed journal articles, 19 published abstracts, 54 conference presentations, 8 invited talks. Principal Investigator on 9 awarded grants in cancer, machine-learning, and health-disparities research.
 
-## Selected publications
+## Publications
 
-<p class="research-note"><em>APA format. Newest first. For the complete list, see the <a href="/cv/">CV</a>.</em></p>
+<p class="research-note"><em>All {{ publications.publications.length }} peer-reviewed journal articles. Each paper has its own page with summary, citation-ready BibTeX &amp; RIS export, and DOI link. Newest first.</em></p>
 
 <ol class="pub-list">
-
+{% for pub in publications.publications %}
 <li class="pub-entry">
-<span class="pub-authors">Galadima, H., Anson-Dwamena, R., Johnson, A., Bello, G., Adunlin, G., &amp; Blando, J.</span>
-(<span class="pub-year">2024</span>).
-<span class="pub-title">Machine learning as a tool for early detection: A focus on late-stage colorectal cancer across socioeconomic spectrums.</span>
-<span class="pub-venue"><em>Cancers</em>, 16(3), 540.</span>
-<a href="https://doi.org/10.3390/cancers16030540">doi:10.3390/cancers16030540</a>
+<span class="pub-authors">{% for a in pub.authors %}{{ a }}{% if not loop.last %}{% if loop.revindex0 == 1 %}, &amp; {% else %}, {% endif %}{% endif %}{% endfor %}</span>
+(<span class="pub-year">{{ pub.year }}</span>).
+<a href="/research/pub/{{ pub.slug }}/" class="pub-title-link"><span class="pub-title">{{ pub.title }}.</span></a>
+<span class="pub-venue"><em>{{ pub.journal }}</em>{% if pub.volume %}, {{ pub.volume }}{% if pub.issue %}({{ pub.issue }}){% endif %}{% endif %}{% if pub.pages %}, {{ pub.pages }}{% endif %}.</span>
+{% if pub.doi %}<a href="{{ pub.url }}" class="pub-doi-link" rel="external">doi:{{ pub.doi }}</a>{% endif %}
 </li>
-
-<li class="pub-entry">
-<span class="pub-authors">Galadima, H., Dumadag, A., &amp; Tonn, C.</span>
-(<span class="pub-year">2024</span>).
-<span class="pub-title">Navigating new normals: Student perceptions, experiences, and mental health service utilization in post-pandemic academia.</span>
-<span class="pub-venue"><em>Education Sciences</em>, 14(2), 125.</span>
-<a href="https://doi.org/10.3390/educsci14020125">doi:10.3390/educsci14020125</a>
-</li>
-
-<li class="pub-entry">
-<span class="pub-authors">Berumen-Flucker, B., Galadima, H., Shangani, S., Kekeh, M., &amp; Akpinar-Elci, M.</span>
-(<span class="pub-year">2023</span>).
-<span class="pub-title">Experiences with COVID-19 stress among Hispanic/Latino farmworkers.</span>
-<span class="pub-venue"><em>Journal of Agricultural Safety and Health</em>, 29(3), 159–172.</span>
-<a href="https://doi.org/10.13031/jash.15459">doi:10.13031/jash.15459</a>
-</li>
-
-<li class="pub-entry">
-<span class="pub-authors">Carter, M., Galadima, H., &amp; Akpinar-Elci, M.</span>
-(<span class="pub-year">2023</span>).
-<span class="pub-title">Pregnancy intention and breastfeeding behaviors in Virginia: A secondary analysis of PRAMS data.</span>
-<span class="pub-venue"><em>Clinical Lactation</em>, 14(2), 63–71.</span>
-<a href="https://doi.org/10.1891/CL-2022-0024">doi:10.1891/CL-2022-0024</a>
-</li>
-
-<li class="pub-entry">
-<span class="pub-authors">Lucero, L., Diaz-Kope, L., &amp; Galadima, H.</span>
-(<span class="pub-year">2022</span>).
-<span class="pub-title">Politics, preparedness, or resources: Examining state responsiveness to the COVID-19 pandemic.</span>
-<span class="pub-venue"><em>Politics and the Life Sciences</em>, 1–13.</span>
-<a href="https://doi.org/10.1017/pls.2022.10">doi:10.1017/pls.2022.10</a>
-</li>
-
-<li class="pub-entry">
-<span class="pub-authors">Al-Taiar, A., Al-Sabah, R., Shaban, L., Sharaf Alddin, R., Durgampudi, P. K., &amp; Galadima, H.</span>
-(<span class="pub-year">2022</span>).
-<span class="pub-title">Is age of menarche directly related to vitamin D levels?</span>
-<span class="pub-venue"><em>American Journal of Human Biology</em>, e23731.</span>
-<a href="https://doi.org/10.1002/ajhb.23731">doi:10.1002/ajhb.23731</a>
-</li>
-
-<li class="pub-entry">
-<span class="pub-authors">Galadima, H.I., Adunlin, G., Hughes, M.S., Cropp, C.D., Lucero, L., &amp; Akpinar-Elci, M.</span>
-(<span class="pub-year">2021</span>).
-<span class="pub-title">Racial disparities and treatment trends among young-onset colorectal cancer patients: An analysis of a hospital cancer registry.</span>
-<span class="pub-venue"><em>Cancer Epidemiology</em>, 72, 101911.</span>
-<a href="https://doi.org/10.1016/j.canep.2021.101911">doi:10.1016/j.canep.2021.101911</a>
-</li>
-
-<li class="pub-entry">
-<span class="pub-authors">Enos, C. W., Galadima, H., Saini, A. D., Bell, S., Siegel, M., &amp; Van Voorhees, A. S.</span>
-(<span class="pub-year">2020</span>).
-<span class="pub-title">Predictors of biologic use and satisfaction among patients with psoriasis.</span>
-<span class="pub-venue"><em>Journal of Psoriasis and Psoriatic Arthritis</em>, 5(3), 100–108.</span>
-<a href="https://doi.org/10.1177/2475530320925553">doi:10.1177/2475530320925553</a>
-</li>
-
-<li class="pub-entry">
-<span class="pub-authors">Galadima, H. I., &amp; McClish, D. K.</span>
-(<span class="pub-year">2019</span>).
-<span class="pub-title">Controlling for confounding via propensity score methods can result in biased estimation of the conditional AUC: A simulation study.</span>
-<span class="pub-venue"><em>Pharmaceutical Statistics</em>, 18(5), 568–582.</span>
-<a href="https://doi.org/10.1002/pst.1948">doi:10.1002/pst.1948</a>
-</li>
-
-<li class="pub-entry">
-<span class="pub-authors">Kimmel, A. D., Masiano, S. P., Bono, R. S., Martin, E. G., Belgrave, F. Z., Adimora, A. A., Galadima, H., &amp; Sabik, L. M.</span>
-(<span class="pub-year">2018</span>).
-<span class="pub-title">Structural barriers to comprehensive, coordinated HIV care: Geographic accessibility in the US South.</span>
-<span class="pub-venue"><em>AIDS Care</em>, 30(11), 1459–1468.</span>
-<a href="https://doi.org/10.1080/09540121.2018.1476656">doi:10.1080/09540121.2018.1476656</a>
-</li>
-
+{% endfor %}
 </ol>
 
 ## Selected grants

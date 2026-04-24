@@ -1,0 +1,154 @@
+---
+pagination:
+  data: publications.publications
+  size: 1
+  alias: pub
+  addAllPagesToCollections: true
+permalink: "/research/pub/{{ pub.slug }}/"
+layout: base.njk
+eleventyComputed:
+  title: "{{ pub.title }}"
+  description: "{{ pub.summary }}"
+schemaType: ScholarlyArticle
+---
+<article class="publication">
+  <header class="publication-header reveal">
+    <p class="post-kicker">Publication</p>
+    <h1 class="publication-title">{{ pub.title }}</h1>
+
+    <p class="publication-authors">
+      {% for author in pub.authors %}<span class="publication-author{% if author.startsWith('Galadima') %} is-self{% endif %}">{{ author }}</span>{% if not loop.last %}<span aria-hidden="true">, </span>{% endif %}{% endfor %}
+    </p>
+
+    <p class="publication-venue">
+      <em>{{ pub.journal }}</em>{% if pub.volume %}, {{ pub.volume }}{% if pub.issue %}({{ pub.issue }}){% endif %}{% endif %}{% if pub.pages %}, {{ pub.pages }}{% endif %}
+      <span class="publication-year">({{ pub.year }})</span>
+    </p>
+
+    {% if pub.doi %}<p class="publication-doi"><a href="{{ pub.url }}" rel="external">doi:{{ pub.doi }}</a></p>{% endif %}
+
+    {% if pub.tags and pub.tags.length %}
+      <p class="publication-tags">
+        {% for tag in pub.tags %}<span class="publication-tag">#{{ tag }}</span>{% endfor %}
+      </p>
+    {% endif %}
+  </header>
+
+  <section class="publication-summary">
+    <p>{{ pub.summary }}</p>
+  </section>
+
+  <section class="publication-cite" id="cite">
+    <h2>Cite this paper</h2>
+    <p class="publication-cite-lede">Copy a ready-made citation in BibTeX or RIS — compatible with Zotero, Mendeley, EndNote, and most reference managers.</p>
+    <div class="publication-cite-buttons">
+      <button type="button" class="button button-ghost" data-cite-copy="bibtex">Copy BibTeX</button>
+      <button type="button" class="button button-ghost" data-cite-copy="ris">Copy RIS</button>
+      <span class="publication-cite-status" data-cite-status role="status" aria-live="polite"></span>
+    </div>
+
+    {%- set bibkey = (pub.authors[0] | replace(",", "") | replace(" ", "") | lower) + (pub.year | string) -%}
+    <details class="publication-cite-view">
+      <summary>View BibTeX</summary>
+      <pre id="bibtex"><code>@article{{ "{" }}{{ bibkey }},
+  author  = {{ "{" }}{% for a in pub.authors %}{{ a }}{% if not loop.last %} and {% endif %}{% endfor %}{{ "}," }}
+  title   = {{ "{" }}{{ pub.title }}{{ "}," }}
+  journal = {{ "{" }}{{ pub.journal }}{{ "}," }}
+{%- if pub.volume %}
+  volume  = {{ "{" }}{{ pub.volume }}{{ "}," }}
+{%- endif %}
+{%- if pub.issue %}
+  number  = {{ "{" }}{{ pub.issue }}{{ "}," }}
+{%- endif %}
+{%- if pub.pages %}
+  pages   = {{ "{" }}{{ pub.pages }}{{ "}," }}
+{%- endif %}
+  year    = {{ "{" }}{{ pub.year }}{{ "}" }}{% if pub.doi %},
+  doi     = {{ "{" }}{{ pub.doi }}{{ "}" }}{% endif %}
+{{ "}" }}</code></pre>
+    </details>
+
+    <details class="publication-cite-view">
+      <summary>View RIS</summary>
+      <pre id="ris"><code>TY  - JOUR
+{%- for a in pub.authors %}
+AU  - {{ a }}
+{%- endfor %}
+TI  - {{ pub.title }}
+JO  - {{ pub.journal }}
+{%- if pub.volume %}
+VL  - {{ pub.volume }}
+{%- endif %}
+{%- if pub.issue %}
+IS  - {{ pub.issue }}
+{%- endif %}
+{%- if pub.pages %}
+SP  - {{ pub.pages }}
+{%- endif %}
+PY  - {{ pub.year }}
+{%- if pub.doi %}
+DO  - {{ pub.doi }}
+{%- endif %}
+ER  - </code></pre>
+    </details>
+  </section>
+
+  <footer class="publication-footer">
+    <p><a href="/research/">&larr; All publications</a></p>
+  </footer>
+</article>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": {{ pub.title | dump | safe }},
+  "author": [
+    {%- for a in pub.authors -%}
+      { "@type": "Person", "name": {{ a | dump | safe }} }{% if not loop.last %},{% endif %}
+    {%- endfor -%}
+  ],
+  "datePublished": "{{ pub.year }}{% if pub.month %}-{% if pub.month < 10 %}0{% endif %}{{ pub.month }}{% endif %}",
+  "isPartOf": {
+    "@type": "PublicationIssue",
+    "isPartOf": {
+      "@type": "Periodical",
+      "name": {{ pub.journal | dump | safe }}
+    }{% if pub.volume %},
+    "volumeNumber": "{{ pub.volume }}"{% endif %}{% if pub.issue %},
+    "issueNumber": "{{ pub.issue }}"{% endif %}
+  }{% if pub.pages %},
+  "pagination": "{{ pub.pages }}"{% endif %}{% if pub.doi %},
+  "sameAs": "{{ pub.url }}"{% endif %},
+  "url": "{{ site.baseUrl }}{{ page.url }}",
+  "about": {{ pub.tags | dump | safe }},
+  "description": {{ pub.summary | dump | safe }}
+}
+</script>
+
+<script>
+  (function () {
+    var buttons = document.querySelectorAll('[data-cite-copy]');
+    var status = document.querySelector('[data-cite-status]');
+    if (!buttons.length) return;
+
+    buttons.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var kind = btn.getAttribute('data-cite-copy');
+        var el = document.getElementById(kind);
+        if (!el) return;
+        var text = el.textContent.trim();
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(function () {
+            status.textContent = kind.toUpperCase() + ' copied to clipboard';
+            setTimeout(function () { status.textContent = ''; }, 3000);
+          }, function () {
+            status.textContent = 'Copy failed — use the "View" panel to select manually';
+          });
+        } else {
+          status.textContent = 'Clipboard unavailable in this browser';
+        }
+      });
+    });
+  })();
+</script>

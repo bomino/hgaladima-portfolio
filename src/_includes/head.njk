@@ -7,7 +7,7 @@
 {%- else -%}
   {%- set ogImageUrl = site.baseUrl + ogImage -%}
 {%- endif -%}
-{%- set ogType = ogType or (schemaType == 'BlogPosting' and 'article' or 'website') -%}
+{%- set ogType = ogType or ((schemaType == 'BlogPosting' or schemaType == 'ScholarlyArticle') and 'article' or 'website') -%}
 {%- set metaRobots = metaRobots or 'index, follow' -%}
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">

@@ -1,0 +1,453 @@
+{
+  "publications": [
+    {
+      "slug": "2024-mental-health-post-pandemic",
+      "title": "Navigating new normals: Student perceptions, experiences, and mental health service utilization in post-pandemic academia",
+      "authors": [
+        "Galadima, H.",
+        "Dumadag, A.",
+        "Tonn, C."
+      ],
+      "year": 2024,
+      "month": 2,
+      "journal": "Education Sciences",
+      "volume": "14",
+      "issue": "2",
+      "pages": "125",
+      "doi": "10.3390/educsci14020125",
+      "url": "https://doi.org/10.3390/educsci14020125",
+      "tags": [
+        "pedagogy",
+        "mental-health",
+        "covid"
+      ],
+      "summary": "Examines student mental-health service utilization patterns during the return-to-campus transition, identifying barriers to care for graduate public-health cohorts."
+    },
+    {
+      "slug": "2024-ml-crc-detection",
+      "title": "Machine learning as a tool for early detection: A focus on late-stage colorectal cancer across socioeconomic spectrums",
+      "authors": [
+        "Galadima, H.",
+        "Anson-Dwamena, R.",
+        "Johnson, A.",
+        "Bello, G.",
+        "Adunlin, G.",
+        "Blando, J."
+      ],
+      "year": 2024,
+      "month": 1,
+      "journal": "Cancers",
+      "volume": "16",
+      "issue": "3",
+      "pages": "540",
+      "doi": "10.3390/cancers16030540",
+      "url": "https://doi.org/10.3390/cancers16030540",
+      "tags": [
+        "cancer",
+        "machine-learning",
+        "SDOH",
+        "colorectal"
+      ],
+      "summary": "Applies machine-learning classifiers to population-level registry data to identify socioeconomic factors associated with late-stage colorectal cancer diagnosis, with specific attention to disparities across income and neighborhood tiers."
+    },
+    {
+      "slug": "2023-covid-farmworkers",
+      "title": "Experiences with COVID-19 stress among Hispanic/Latino farmworkers",
+      "authors": [
+        "Berumen-Flucker, B.",
+        "Galadima, H.",
+        "Shangani, S.",
+        "Kekeh, M.",
+        "Akpinar-Elci, M."
+      ],
+      "year": 2023,
+      "journal": "Journal of Agricultural Safety and Health",
+      "volume": "29",
+      "issue": "3",
+      "pages": "159–172",
+      "doi": "10.13031/jash.15459",
+      "url": "https://doi.org/10.13031/jash.15459",
+      "tags": [
+        "SDOH",
+        "covid",
+        "occupational-health"
+      ],
+      "summary": "Mixed-methods characterization of pandemic-era stressors on Hispanic/Latino farmworkers in the Eastern US, informing occupational and public-health response frameworks."
+    },
+    {
+      "slug": "2023-pregnancy-intention-breastfeeding",
+      "title": "Pregnancy intention and breastfeeding behaviors in Virginia: A secondary analysis of PRAMS data",
+      "authors": [
+        "Carter, M.",
+        "Galadima, H.",
+        "Akpinar-Elci, M."
+      ],
+      "year": 2023,
+      "journal": "Clinical Lactation",
+      "volume": "14",
+      "issue": "2",
+      "pages": "63–71",
+      "doi": "10.1891/CL-2022-0024",
+      "url": "https://doi.org/10.1891/CL-2022-0024",
+      "tags": [
+        "maternal-health",
+        "SDOH"
+      ],
+      "summary": "Secondary analysis of Virginia PRAMS data linking pregnancy intention to postpartum breastfeeding initiation and duration."
+    },
+    {
+      "slug": "2022-state-covid-response",
+      "title": "Politics, preparedness, or resources: Examining state responsiveness to the COVID-19 pandemic",
+      "authors": [
+        "Lucero, L.",
+        "Diaz-Kope, L.",
+        "Galadima, H."
+      ],
+      "year": 2022,
+      "journal": "Politics and the Life Sciences",
+      "pages": "1–13",
+      "doi": "10.1017/pls.2022.10",
+      "url": "https://doi.org/10.1017/pls.2022.10",
+      "tags": [
+        "covid",
+        "health-policy"
+      ],
+      "summary": "Cross-state analysis of early-pandemic responsiveness, disentangling the roles of political leadership, preparedness infrastructure, and resource availability."
+    },
+    {
+      "slug": "2022-menarche-vitamin-d",
+      "title": "Is age of menarche directly related to vitamin D levels?",
+      "authors": [
+        "Al-Taiar, A.",
+        "Al-Sabah, R.",
+        "Shaban, L.",
+        "Sharaf Alddin, R.",
+        "Durgampudi, P. K.",
+        "Galadima, H."
+      ],
+      "year": 2022,
+      "journal": "American Journal of Human Biology",
+      "pages": "e23731",
+      "doi": "10.1002/ajhb.23731",
+      "url": "https://doi.org/10.1002/ajhb.23731",
+      "tags": [
+        "maternal-health"
+      ],
+      "summary": "Tests whether serum 25-hydroxyvitamin D levels predict age at menarche after adjusting for BMI, adiposity, and dietary intake in a pediatric cohort."
+    },
+    {
+      "slug": "2022-wildfire-respiratory",
+      "title": "Observations of delayed changes in respiratory function among allergy clinic patients exposed to wildfire smoke",
+      "authors": [
+        "Blando, J.",
+        "Allen, M.",
+        "Galadima, H.",
+        "Tolson, T.",
+        "Akpinar-Elci, M.",
+        "Szklo-Coxe, M."
+      ],
+      "year": 2022,
+      "journal": "International Journal of Environmental Research and Public Health",
+      "volume": "19",
+      "issue": "3",
+      "pages": "1241",
+      "doi": "10.3390/ijerph19031241",
+      "url": "https://doi.org/10.3390/ijerph19031241",
+      "tags": [
+        "environmental-health"
+      ],
+      "summary": "Documents delayed-onset respiratory function decline in allergy-clinic patients following wildfire smoke exposure, supporting longer observation windows in post-exposure screening."
+    },
+    {
+      "slug": "2021-young-onset-crc",
+      "title": "Racial disparities and treatment trends among young-onset colorectal cancer patients: An analysis of a hospital cancer registry",
+      "authors": [
+        "Galadima, H. I.",
+        "Adunlin, G.",
+        "Hughes, M. S.",
+        "Cropp, C. D.",
+        "Lucero, L.",
+        "Akpinar-Elci, M."
+      ],
+      "year": 2021,
+      "journal": "Cancer Epidemiology",
+      "volume": "72",
+      "pages": "101911",
+      "doi": "10.1016/j.canep.2021.101911",
+      "url": "https://doi.org/10.1016/j.canep.2021.101911",
+      "tags": [
+        "cancer",
+        "SDOH",
+        "colorectal"
+      ],
+      "summary": "Characterizes racial disparities in treatment patterns and clinical presentation among early-onset colorectal cancer patients, drawing on an 8-year Virginia hospital registry."
+    },
+    {
+      "slug": "2020-covid-niger",
+      "title": "Predictive modeling and estimation of the doubling time of confirmed cases of COVID-19 in Niger",
+      "authors": [
+        "Sidi Zakari, I.",
+        "Galadima, H."
+      ],
+      "year": 2020,
+      "journal": "Annales de l'Université Abdou Moumouni de Niamey",
+      "volume": "XXVII",
+      "issue": "1–2",
+      "pages": "89–103",
+      "tags": [
+        "covid",
+        "methods"
+      ],
+      "summary": "Predictive modeling of COVID-19 case doubling time in Niger during the early-pandemic period, developed as a consulting collaboration for UNICEF."
+    },
+    {
+      "slug": "2020-psoriasis-biologic",
+      "title": "Predictors of biologic use and satisfaction among patients with psoriasis: An analysis and geographic visualization of the 2016 and 2017 National Psoriasis Foundation annual surveys",
+      "authors": [
+        "Enos, C. W.",
+        "Galadima, H.",
+        "Saini, A. D.",
+        "Bell, S.",
+        "Siegel, M.",
+        "Van Voorhees, A. S."
+      ],
+      "year": 2020,
+      "journal": "Journal of Psoriasis and Psoriatic Arthritis",
+      "volume": "5",
+      "issue": "3",
+      "pages": "100–108",
+      "doi": "10.1177/2475530320925553",
+      "url": "https://doi.org/10.1177/2475530320925553",
+      "tags": [
+        "health-services"
+      ],
+      "summary": "Geographic and sociodemographic analysis of biologic therapy uptake among psoriasis patients in the US, combining two NPF survey waves."
+    },
+    {
+      "slug": "2020-dental-postmortem",
+      "title": "Postmortem dental records identification by dental hygiene students: A pilot study",
+      "authors": [
+        "Bradshaw, B. T.",
+        "Bruhn, A. M.",
+        "Newcomb, T. L.",
+        "Galadima, H."
+      ],
+      "year": 2020,
+      "journal": "Journal of Dental Hygiene",
+      "volume": "94",
+      "issue": "4",
+      "pages": "39–46",
+      "tags": [
+        "pedagogy",
+        "health-services"
+      ],
+      "summary": "Pilot study evaluating dental hygiene students’ ability to perform forensic identification from postmortem dental records."
+    },
+    {
+      "slug": "2019-auc-confounding",
+      "title": "Controlling for confounding via propensity score methods can result in biased estimation of the conditional AUC: A simulation study",
+      "authors": [
+        "Galadima, H. I.",
+        "McClish, D. K."
+      ],
+      "year": 2019,
+      "journal": "Pharmaceutical Statistics",
+      "volume": "18",
+      "issue": "5",
+      "pages": "568–582",
+      "doi": "10.1002/pst.1948",
+      "url": "https://doi.org/10.1002/pst.1948",
+      "tags": [
+        "methods",
+        "propensity-scores"
+      ],
+      "summary": "Demonstrates through a large simulation study that naive propensity-score adjustment biases the conditional AUC in diagnostic-accuracy studies, with implications for risk-prediction research in observational data."
+    },
+    {
+      "slug": "2019-fetal-myocardial",
+      "title": "Fetal myocardial performance index in the third trimester of pregnancy: Feasibility and reproducibility of conventional spectral Doppler versus spectral tissue Doppler technique",
+      "authors": [
+        "Porche, L. M.",
+        "Sinkovskaya, E.",
+        "Seaman, R. D.",
+        "Galadima, H.",
+        "Romary, L.",
+        "Philips, J.",
+        "Abuhamad, A."
+      ],
+      "year": 2019,
+      "journal": "American Journal of Perinatology",
+      "doi": "10.1055/s-0039-1697585",
+      "url": "https://doi.org/10.1055/s-0039-1697585",
+      "tags": [
+        "maternal-health",
+        "methods"
+      ],
+      "summary": "Methodological comparison of two Doppler techniques for measuring fetal myocardial performance in the third trimester, assessing reproducibility and clinical feasibility."
+    },
+    {
+      "slug": "2019-hoverboard-injuries",
+      "title": "Injuries associated with hoverboard use: A review of the National Electronic Injury Surveillance System",
+      "authors": [
+        "McIlvain, C.",
+        "Galadima, H.",
+        "Tzavaras, T. J.",
+        "Weingart, G. S."
+      ],
+      "year": 2019,
+      "journal": "American Journal of Emergency Medicine",
+      "volume": "37",
+      "issue": "3",
+      "pages": "472–477",
+      "doi": "10.1016/j.ajem.2018.06.022",
+      "url": "https://doi.org/10.1016/j.ajem.2018.06.022",
+      "tags": [
+        "injury-epi"
+      ],
+      "summary": "NEISS-based surveillance analysis characterizing hoverboard-associated injury patterns by age, body region, and disposition, supporting product-safety policy discussion."
+    },
+    {
+      "slug": "2018-hiv-macrophages-brain",
+      "title": "Macrophages but not astrocytes harbor HIV DNA in the brains of HIV-1–infected aviremic individuals on suppressive antiretroviral therapy",
+      "authors": [
+        "Ko, A.",
+        "Kang, G.",
+        "Hattler, J. B.",
+        "Galadima, H. I.",
+        "Zhang, J.",
+        "Li, Q.",
+        "Kim, W.-K."
+      ],
+      "year": 2018,
+      "journal": "Journal of Neuroimmune Pharmacology",
+      "volume": "14",
+      "issue": "1",
+      "pages": "110–119",
+      "doi": "10.1007/s11481-018-9809-2",
+      "url": "https://doi.org/10.1007/s11481-018-9809-2",
+      "tags": [
+        "hiv",
+        "basic-science"
+      ],
+      "summary": "Single-cell analysis localizing HIV DNA reservoirs to brain macrophages in aviremic individuals on suppressive antiretroviral therapy, with implications for HIV cure strategies."
+    },
+    {
+      "slug": "2018-colonoscopy-sedation",
+      "title": "Moderate sedation or monitored anesthesia care for colonoscopies: Is there a difference?",
+      "authors": [
+        "Ng, M.",
+        "Dhanani, R.",
+        "Galadima, H.",
+        "Burgess, J."
+      ],
+      "year": 2018,
+      "journal": "The American Surgeon",
+      "volume": "84",
+      "issue": "8",
+      "pages": "1284–1287",
+      "tags": [
+        "health-services"
+      ],
+      "summary": "Comparative-effectiveness analysis of sedation strategies for screening colonoscopy, assessing patient-reported outcomes and procedural efficiency."
+    },
+    {
+      "slug": "2018-fetal-cardiac-anomalies",
+      "title": "Relationship between cavum septi pellucidi measurements and fetal hypoplastic left heart syndrome or dextro-transposition of the great arteries",
+      "authors": [
+        "Saadeh, M.",
+        "Zhao, Y.",
+        "Galadima, H.",
+        "Chaoui, R.",
+        "Sinkovskaya, E.",
+        "Abuhamad, A."
+      ],
+      "year": 2018,
+      "journal": "Journal of Ultrasound in Medicine",
+      "volume": "37",
+      "issue": "7",
+      "pages": "1673–1680",
+      "doi": "10.1002/jum.14515",
+      "url": "https://doi.org/10.1002/jum.14515",
+      "tags": [
+        "maternal-health",
+        "methods"
+      ],
+      "summary": "Evaluates fetal cavum septi pellucidi measurements as a prenatal ultrasound marker for major congenital heart defects."
+    },
+    {
+      "slug": "2018-hiv-geographic-access",
+      "title": "Structural barriers to comprehensive, coordinated HIV care: Geographic accessibility in the US South",
+      "authors": [
+        "Kimmel, A. D.",
+        "Masiano, S. P.",
+        "Bono, R. S.",
+        "Martin, E. G.",
+        "Belgrave, F. Z.",
+        "Adimora, A. A.",
+        "Galadima, H.",
+        "Sabik, L. M."
+      ],
+      "year": 2018,
+      "journal": "AIDS Care",
+      "volume": "30",
+      "issue": "11",
+      "pages": "1459–1468",
+      "doi": "10.1080/09540121.2018.1476656",
+      "url": "https://doi.org/10.1080/09540121.2018.1476656",
+      "tags": [
+        "hiv",
+        "SDOH",
+        "health-services"
+      ],
+      "summary": "Geographic-accessibility analysis of comprehensive HIV care in the US South, quantifying structural barriers across rural and urban contexts."
+    },
+    {
+      "slug": "2017-melanoma-neighborhood",
+      "title": "The role of neighborhood characteristics in late-stage melanoma diagnosis among Hispanic men in California, Texas, and Florida, 1996–2012",
+      "authors": [
+        "Harvey, V. M.",
+        "Enos, C. W.",
+        "Chen, J. T.",
+        "Galadima, H.",
+        "Eschbach, K."
+      ],
+      "year": 2017,
+      "journal": "Journal of Cancer Epidemiology",
+      "volume": "2017",
+      "pages": "8418904",
+      "doi": "10.1155/2017/8418904",
+      "url": "https://doi.org/10.1155/2017/8418904",
+      "tags": [
+        "cancer",
+        "SDOH"
+      ],
+      "summary": "Multi-state spatial analysis showing that neighborhood-level characteristics modulate late-stage melanoma diagnosis among Hispanic men over a 17-year window."
+    },
+    {
+      "slug": "2016-hiv-care-delivery",
+      "title": "Clinical outcomes of HIV care delivery models in the US: A systematic review",
+      "authors": [
+        "Kimmel, A. D.",
+        "Martin, E. G.",
+        "Galadima, H.",
+        "Bono, R. S.",
+        "Tehrani, A. B.",
+        "Cyrus, J. W.",
+        "Krist, A. H."
+      ],
+      "year": 2016,
+      "journal": "AIDS Care",
+      "volume": "28",
+      "issue": "10",
+      "pages": "1215–1222",
+      "doi": "10.1080/09540121.2016.1178702",
+      "url": "https://doi.org/10.1080/09540121.2016.1178702",
+      "tags": [
+        "hiv",
+        "health-services",
+        "systematic-review"
+      ],
+      "summary": "Systematic review synthesizing evidence on HIV care-delivery models in the US, mapping clinical outcomes to structural characteristics."
+    }
+  ]
+}
