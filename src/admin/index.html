@@ -105,6 +105,23 @@
         box-shadow: 0 8px 24px -8px oklch(18% 0.02 260 / 0.12) !important;
     }
 
+    /* The logo image (config.yml logo_url) — rendered as the portrait with a
+       warm halo ring matching the main-site nav avatar. Targets the first img
+       inside the authentication page since Decap emits the logo that way. */
+    [class*="AuthenticationPage"] img,
+    [class*="GitHubAuthenticationPage"] img {
+        width: 96px !important;
+        height: 96px !important;
+        border-radius: 50% !important;
+        object-fit: cover !important;
+        border: 1px solid var(--hg-divider) !important;
+        box-shadow: 0 0 0 3px var(--hg-paper-elevated),
+                    0 0 0 5px color-mix(in oklch, var(--hg-warm) 55%, transparent) !important;
+        background: var(--hg-surface) !important;
+        margin: 0 auto 1.5rem !important;
+        display: block !important;
+    }
+
     /* Primary buttons — accent blue, warm hover, Inter weight, gentle radius */
     button[type="button"],
     button[type="submit"],
