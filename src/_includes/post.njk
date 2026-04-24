@@ -3,16 +3,14 @@ layout: base.njk
 schemaType: BlogPosting
 ---
 <article class="post">
-  <header class="post-header">
+  <header class="post-header reveal">
     <p class="post-kicker">Blog</p>
     <h1 class="post-title">{{ title }}</h1>
     <p class="post-meta">
       <time datetime="{{ page.date | isoDate }}">{{ page.date | readableDate }}</time>
       {% if tags and tags.length %}
-        &middot;
-        <span class="post-tags">
-          {% for tag in tags %}<span class="post-tag">#{{ tag }}</span>{% if not loop.last %} {% endif %}{% endfor %}
-        </span>
+        <span aria-hidden="true">·</span>
+        {% for tag in tags %}<span class="post-tag">#{{ tag }}</span>{% endfor %}
       {% endif %}
     </p>
     {% if summary %}<p class="post-summary">{{ summary }}</p>{% endif %}
@@ -23,6 +21,6 @@ schemaType: BlogPosting
   </div>
 
   <footer class="post-footer">
-    <p><a href="/blog/">&larr; Back to all posts</a></p>
+    <p><a href="/blog/">&larr; All posts</a></p>
   </footer>
 </article>

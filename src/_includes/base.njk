@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html lang="{{ seo.language }}">
 <head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,400..700,0..80;1,9..144,400..700,0..80&family=Inter:wght@400..700&display=swap">
   {% include "head.njk" %}
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
   {% include "header.njk" %}
   <main id="main" class="site-main">
     {{ content | safe }}
   </main>
   {% include "footer.njk" %}
+  <script src="/assets/reveal.js" defer></script>
 </body>
 </html>

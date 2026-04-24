@@ -6,56 +6,84 @@ schemaType: Person
 ---
 <section class="hero">
   <div class="hero-inner">
-    <div class="hero-photo-wrap">
-      <img src="/assets/photo.svg" alt="Portrait of {{ site.name }}" class="hero-photo" width="180" height="180">
-    </div>
-    <div class="hero-text">
-      <p class="hero-kicker">{{ site.affiliation.department }} · {{ site.affiliation.name }}</p>
-      <h1 class="hero-name">{{ site.name }}</h1>
-      <p class="hero-role">{{ site.role }}</p>
-      <p class="hero-tagline">{{ site.tagline }}</p>
-      <p class="hero-actions">
-        <a href="/research/" class="button button-primary">Research</a>
-        <a href="/teaching/" class="button button-secondary">Teaching</a>
-        <a href="/cv/" class="button button-ghost">CV</a>
-      </p>
+    <p class="hero-eyebrow">{{ site.affiliation.name }} · Biostatistician</p>
+    <h1 class="hero-display">
+      Dr. Hadiza <span class="hero-display-accent">Galadima</span>
+    </h1>
+    <p class="hero-tagline">Statistical reasoning for public-health research &amp; pedagogy.</p>
+    <div class="hero-actions">
+      <a href="/research/" class="button button-primary button-arrow">Research</a>
+      <a href="/teaching/" class="button button-ghost button-arrow">Teaching</a>
     </div>
   </div>
+  <svg class="hero-mark" viewBox="0 0 400 400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="bellfill" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="currentColor" stop-opacity="0.35"/>
+        <stop offset="100%" stop-color="currentColor" stop-opacity="0"/>
+      </linearGradient>
+    </defs>
+    <path d="M 20 340 C 90 340, 130 340, 170 280 S 220 80, 200 80 S 180 80, 160 160 S 130 280, 90 320 S 20 340, 20 340 Z M 380 340 C 310 340, 270 340, 230 280 S 180 80, 200 80 S 220 80, 240 160 S 270 280, 310 320 S 380 340, 380 340 Z" fill="url(#bellfill)"/>
+    <path d="M 20 340 C 90 340, 140 340, 180 260 S 220 80, 200 80 S 180 80, 160 180 S 130 320, 90 335 S 20 340, 20 340" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-opacity="0.9"/>
+    <path d="M 380 340 C 310 340, 260 340, 220 260 S 180 80, 200 80 S 220 80, 240 180 S 270 320, 310 335 S 380 340, 380 340" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-opacity="0.9"/>
+    <line x1="200" y1="80" x2="200" y2="340" stroke="currentColor" stroke-width="0.8" stroke-dasharray="2 4" stroke-opacity="0.5"/>
+    <line x1="20" y1="340" x2="380" y2="340" stroke="currentColor" stroke-width="1" stroke-opacity="0.5"/>
+  </svg>
 </section>
 
-<section class="cards">
-  <div class="cards-inner">
-    <article class="card">
-      <h2 class="card-title"><a href="/research/">Research</a></h2>
-      <p class="card-description">UPDATE: 1–2 sentence summary of your research focus — e.g., methods for small-sample inference in community-health studies, collaboration with epidemiologists on outcome evaluation.</p>
-    </article>
-
-    <article class="card">
-      <h2 class="card-title"><a href="/teaching/">Teaching</a></h2>
-      <p class="card-description">MPHO 605 (Biostatistics) and open-source tools for graduate public-health education. Free calculators at <a href="https://ztchi.hgaladima.com/" rel="noopener">ztchi.hgaladima.com</a>.</p>
-    </article>
-
-    <article class="card">
-      <h2 class="card-title"><a href="/blog/">Writing</a></h2>
-      <p class="card-description">Teaching notes, pedagogy reflections, and research-in-progress essays. Unpolished on purpose — this is where ideas develop.</p>
-    </article>
+<section class="section practice">
+  <div class="reveal">
+    <p class="section-eyebrow">What I do</p>
+    <h2 class="section-title">Three overlapping lines of work.</h2>
   </div>
+
+  <article class="practice-item reveal">
+    <div class="practice-number">01</div>
+    <div class="practice-body">
+      <h3><a href="/research/">Research</a></h3>
+      <p class="practice-description">Methods and applied collaborations in public-health statistics — small-sample inference, outcome evaluation, and the statistical groundwork behind community-health programs.</p>
+      <a href="/research/" class="practice-link">Publications &amp; interests</a>
+    </div>
+  </article>
+
+  <article class="practice-item reveal">
+    <div class="practice-number">02</div>
+    <div class="practice-body">
+      <h3><a href="/teaching/">Teaching</a></h3>
+      <p class="practice-description">MPHO 605 (Biostatistics) at ODU, taught effect-sizes-first. Open-source calculators for students — no ads, no tracking, work shown — live at <a href="https://ztchi.hgaladima.com/" rel="noopener">ztchi.hgaladima.com</a>.</p>
+      <a href="/teaching/" class="practice-link">Approach &amp; tools</a>
+    </div>
+  </article>
+
+  <article class="practice-item reveal">
+    <div class="practice-number">03</div>
+    <div class="practice-body">
+      <h3><a href="/blog/">Writing</a></h3>
+      <p class="practice-description">Teaching notes, pedagogy reflections, research-in-progress essays. Unpolished on purpose — this is where ideas develop before they become papers or lectures.</p>
+      <a href="/blog/" class="practice-link">Read the blog</a>
+    </div>
+  </article>
 </section>
 
-<section class="section-recent">
-  <div class="section-inner">
-    <h2 class="section-title">Recent posts</h2>
-    <ul class="post-list">
-      {% for post in collections.posts | reverse | slice(0, 3) %}
-        <li class="post-list-item">
-          <a href="{{ post.url }}">
-            <span class="post-list-date"><time datetime="{{ post.date | isoDate }}">{{ post.date | readableDate }}</time></span>
+<section class="section">
+  <div class="reveal">
+    <p class="section-eyebrow">Recent writing</p>
+    <h2 class="section-title">From the blog.</h2>
+  </div>
+
+  <ul class="post-list reveal">
+    {% for post in collections.posts | reverse | slice(0, 3) %}
+      <li class="post-list-item">
+        <a href="{{ post.url }}" class="post-list-link">
+          <span class="post-list-date"><time datetime="{{ post.date | isoDate }}">{{ post.date | readableDate }}</time></span>
+          <span class="post-list-text">
             <span class="post-list-title">{{ post.data.title }}</span>
-          </a>
-          {% if post.data.summary %}<p class="post-list-summary">{{ post.data.summary }}</p>{% endif %}
-        </li>
-      {% endfor %}
-    </ul>
-    <p><a href="/blog/" class="link-more">All posts &rarr;</a></p>
-  </div>
+            {% if post.data.summary %}<span class="post-list-summary">{{ post.data.summary }}</span>{% endif %}
+          </span>
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <p style="margin-top: var(--space-xl);"><a href="/blog/" class="practice-link">All posts</a></p>
 </section>

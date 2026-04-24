@@ -7,25 +7,35 @@ schemaType: CollectionPage
 ---
 
 <article class="post-index">
-  <header class="post-index-header">
-    <h1 class="post-index-title">Blog</h1>
-    <p class="post-index-kicker">Teaching notes, pedagogy reflections, and research-in-progress. Written for fellow educators and my own students.</p>
+  <header class="post-index-header reveal">
+    <h1 class="post-index-title">Writing</h1>
+    <p class="post-index-kicker">Teaching notes, pedagogy reflections, and research-in-progress — for fellow educators and my own students.</p>
   </header>
 
-  <ul class="post-index-list">
+  {% set currentYear = "" %}
+  <ul class="post-list reveal">
     {% for post in collections.posts | reverse %}
-      <li class="post-index-item">
-        <a href="{{ post.url }}" class="post-index-link">
-          <time class="post-index-date" datetime="{{ post.date | isoDate }}">{{ post.date | readableDate }}</time>
-          <h2 class="post-index-item-title">{{ post.data.title }}</h2>
-          {% if post.data.summary %}<p class="post-index-summary">{{ post.data.summary }}</p>{% endif %}
-          {% if post.data.tags and post.data.tags.length %}
-            <p class="post-index-tags">{% for tag in post.data.tags %}<span class="post-tag">#{{ tag }}</span> {% endfor %}</p>
-          {% endif %}
+      {% set postYear = post.date | year %}
+      {% if postYear != currentYear %}
+        {% set currentYear = postYear %}
+        <li class="post-year-label">{{ postYear }}</li>
+      {% endif %}
+      <li class="post-list-item">
+        <a href="{{ post.url }}" class="post-list-link">
+          <span class="post-list-date"><time datetime="{{ post.date | isoDate }}">{{ post.date | readableDate }}</time></span>
+          <span class="post-list-text">
+            <span class="post-list-title">{{ post.data.title }}</span>
+            {% if post.data.summary %}<span class="post-list-summary">{{ post.data.summary }}</span>{% endif %}
+            {% if post.data.tags and post.data.tags.length %}
+              <span class="post-meta" style="margin-top: var(--space-2xs);">
+                {% for tag in post.data.tags %}<span class="post-tag">#{{ tag }}</span>{% endfor %}
+              </span>
+            {% endif %}
+          </span>
         </a>
       </li>
     {% else %}
-      <li class="post-index-empty">No posts yet. Check back soon.</li>
+      <li>No posts yet. Check back soon.</li>
     {% endfor %}
   </ul>
 </article>

@@ -1,16 +1,40 @@
 <footer class="site-footer">
   <div class="site-footer-inner">
-    <p class="site-footer-identity">
-      &copy; {{ site.buildYear }} {{ site.name }}. All rights reserved.
-    </p>
-    <nav aria-label="Related sites" class="site-footer-nav">
-      <p class="site-footer-nav-title">Related</p>
+    <div class="footer-brand-col">
+      <p class="footer-brand">{{ site.shortName }}</p>
+      <p class="footer-description">{{ site.affiliation.department }} · {{ site.affiliation.name }}</p>
+    </div>
+
+    <div class="footer-column">
+      <p class="footer-column-title">Site</p>
+      <ul>
+        {% for item in site.nav %}
+          <li><a href="{{ item.href }}">{{ item.label }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <p class="footer-column-title">Elsewhere</p>
       <ul>
         {% for link in site.related %}
-          <li><a href="{{ link.href }}" rel="me">{{ link.label }}</a></li>
+          <li><a href="{{ link.href }}" rel="me">{{ link.label }} →</a></li>
         {% endfor %}
-        <li><a href="/contact/">Contact</a></li>
+        <li><a href="/contact/">Email</a></li>
       </ul>
-    </nav>
+    </div>
+
+    <div class="footer-column">
+      <p class="footer-column-title">Colophon</p>
+      <p class="footer-colophon">
+        Set in Fraunces &amp; Inter. Built with Eleventy, served by Cloudflare.
+        Written in hypertext &amp; edited in a browser.
+      </p>
+    </div>
+  </div>
+
+  <div class="footer-meta">
+    <span>&copy; {{ site.buildYear }} {{ site.name }}</span>
+    <span>No cookies. No tracking. No ads.</span>
   </div>
 </footer>
