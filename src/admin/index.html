@@ -152,6 +152,58 @@
                     0 0 0 3px var(--hg-warm) !important;
     }
 
+    /* Decap 3.3.x editor layout — the user-menu avatar in the top right.
+       This is a button with Decap's own avatar slot (not the logo_url),
+       which by default renders a gray silhouette placeholder. We force
+       the portrait into it via a background image + hide whatever
+       default glyph Decap puts inside. Broad selector net because the
+       exact class names differ across minor versions. */
+    [class*="UserMenu"] button,
+    [class*="UserMenu"] [class*="avatar" i],
+    [class*="AccountDropdown"] button,
+    [class*="Account"] button,
+    button[class*="UserMenu"],
+    button[class*="Avatar" i],
+    [class*="user-menu"] button,
+    [class*="AppHeader"] > :last-child button,
+    [class*="HeaderContainer"] > :last-child button {
+        background: url('/assets/photo.jpg') center/cover no-repeat var(--hg-surface) !important;
+        border-radius: 50% !important;
+        width: 36px !important;
+        height: 36px !important;
+        min-width: 36px !important;
+        padding: 0 !important;
+        border: 1px solid var(--hg-divider) !important;
+        box-shadow: 0 0 0 2px var(--hg-paper-elevated),
+                    0 0 0 3px color-mix(in oklch, var(--hg-warm) 55%, transparent) !important;
+        transition: transform 160ms, box-shadow 160ms !important;
+        overflow: hidden !important;
+    }
+
+    [class*="UserMenu"] button:hover,
+    [class*="AccountDropdown"] button:hover,
+    [class*="Account"] button:hover {
+        transform: scale(1.05) !important;
+        box-shadow: 0 0 0 2px var(--hg-paper-elevated),
+                    0 0 0 3px var(--hg-warm) !important;
+    }
+
+    /* Hide Decap's default placeholder glyph (silhouette SVG / img) inside
+       the user-menu button so it doesn't layer on top of our portrait. */
+    [class*="UserMenu"] button > svg,
+    [class*="UserMenu"] button > img,
+    [class*="AccountDropdown"] button > svg,
+    [class*="AccountDropdown"] button > img,
+    [class*="Account"] button > svg,
+    [class*="Account"] button > img,
+    button[class*="UserMenu"] > svg,
+    button[class*="UserMenu"] > img,
+    button[class*="Avatar" i] > svg,
+    button[class*="Avatar" i] > img {
+        opacity: 0 !important;
+        visibility: hidden !important;
+    }
+
     /* Primary buttons — accent blue, warm hover, Inter weight, gentle radius */
     button[type="button"],
     button[type="submit"],
