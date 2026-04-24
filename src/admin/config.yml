@@ -1,16 +1,19 @@
 # Decap CMS configuration — hgaladima.com
 #
-# Backend: GitHub via Netlify's free OAuth relay (no Netlify account required).
-# See docs/decap-cms-setup.md for the one-time GitHub OAuth app registration.
+# Backend: GitHub via a self-hosted OAuth relay on Cloudflare Pages
+# Functions. Netlify's formerly-free public relay now requires the site
+# to be hosted on Netlify, so we run our own two-function relay at
+# /api/auth and /api/callback (see functions/api/*.js in this repo).
 #
-# UPDATE the `repo` line below to your actual GitHub owner/repo-name.
+# See docs/decap-cms-setup.md for the one-time GitHub OAuth app
+# registration and CF Pages env-var setup.
 
 backend:
   name: github
   repo: bomino/hgaladima-portfolio
   branch: main
-  base_url: https://api.netlify.com
-  auth_endpoint: auth
+  base_url: https://hgaladima.com
+  auth_endpoint: api/auth
 
 site_url: https://hgaladima.com
 display_url: https://hgaladima.com
