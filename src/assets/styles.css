@@ -1083,7 +1083,7 @@ img, svg, video {
     margin: var(--space-l) 0 0;
 }
 
-/* Elsewhere — understated reference list at the bottom */
+/* Elsewhere — editorial byline, not a card or grid */
 .contact-elsewhere {
     margin: var(--space-xl) 0 var(--space-l);
     padding-top: var(--space-l);
@@ -1091,47 +1091,45 @@ img, svg, video {
     max-width: var(--measure);
 }
 
-.contact-elsewhere-kicker {
+.contact-elsewhere-byline {
+    font-family: var(--font-display);
+    font-variation-settings: "opsz" 18, "SOFT" 20;
+    font-size: var(--step-0);
+    line-height: 1.6;
+    color: var(--ink);
+    margin: 0;
+}
+
+.contact-elsewhere-label {
+    font-family: var(--font-body);
     font-size: var(--step--1);
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.14em;
     color: var(--warm);
-    margin: 0 0 var(--space-s);
+    margin-right: var(--space-xs);
+    font-variation-settings: normal;
+    font-style: normal;
 }
 
-.contact-links {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
-    gap: var(--space-2xs) var(--space-l);
+.contact-elsewhere-sep {
+    margin: 0 0.6ch;
+    color: var(--ink-faint);
+    user-select: none;
 }
 
-.contact-links li {
-    padding: var(--space-2xs) 0;
-    font-size: var(--step--1);
-    display: flex;
-    gap: var(--space-xs);
-    align-items: baseline;
-    flex-wrap: wrap;
-}
-
-.contact-link-label {
-    color: var(--ink-muted);
-    font-weight: 500;
-    min-width: 6rem;
-}
-
-.contact-links a {
+.contact-elsewhere-byline a {
     color: var(--ink);
-    border-bottom: none;
-    transition: color var(--dur-fast) var(--ease-out);
+    border-bottom: 1px solid color-mix(in oklch, var(--accent) 30%, transparent);
+    text-decoration: none;
+    transition: color var(--dur-fast) var(--ease-out),
+                border-bottom-color var(--dur-fast) var(--ease-out);
+    padding-bottom: 0.02em;
 }
 
-.contact-links a:hover {
+.contact-elsewhere-byline a:hover {
     color: var(--accent);
+    border-bottom-color: var(--accent);
 }
 
 /* -------- Research page — richer publication list --------

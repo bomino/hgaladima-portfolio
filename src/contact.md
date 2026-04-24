@@ -43,11 +43,8 @@ schemaType: WebPage
 </article>
 
 <section class="contact-elsewhere reveal">
-  <p class="contact-elsewhere-kicker">Elsewhere online</p>
-  <ul class="contact-links">
-    <li><span class="contact-link-label">ORCID</span> <a href="https://orcid.org/0000-0003-1588-3929">0000-0003-1588-3929</a></li>
-    <li><span class="contact-link-label">Google Scholar</span> <a href="https://scholar.google.com/citations?hl=en&user=G7In2sYAAAAJ">scholar.google.com</a></li>
-    <li><span class="contact-link-label">LinkedIn</span> <a href="https://www.linkedin.com/in/hadizagaladima/">linkedin.com/in/hadizagaladima</a></li>
-    <li><span class="contact-link-label">ODU directory</span> <a href="https://www.odu.edu/directory/people/h/hgaladim">odu.edu/directory/people/h/hgaladim</a></li>
-  </ul>
+  <p class="contact-elsewhere-byline">
+    <span class="contact-elsewhere-label">Elsewhere:</span>
+    <a href="https://orcid.org/0000-0003-1588-3929">ORCID</a><span class="contact-elsewhere-sep" aria-hidden="true">·</span><a href="https://scholar.google.com/citations?hl=en&user=G7In2sYAAAAJ">Google Scholar</a><span class="contact-elsewhere-sep" aria-hidden="true">·</span><a href="https://www.linkedin.com/in/hadizagaladima/">LinkedIn</a><span class="contact-elsewhere-sep" aria-hidden="true">·</span><a href="https://www.odu.edu/directory/people/h/hgaladim">ODU faculty page</a>
+  </p>
 </section>
