@@ -1,0 +1,35 @@
+---
+permalink: /feed.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>{{ site.name }}</title>
+    <link>{{ site.baseUrl }}/</link>
+    <description>{{ seo.defaultDescription }}</description>
+    <language>{{ seo.language }}</language>
+    <atom:link href="{{ site.baseUrl }}/feed.xml" rel="self" type="application/rss+xml"/>
+    {%- set latestPost = collections.posts | last %}
+    {%- if latestPost %}
+    <lastBuildDate>{{ latestPost.date | isoDate }}</lastBuildDate>
+    {%- endif %}
+    {%- for post in collections.posts | reverse %}
+    <item>
+      <title>{{ post.data.title }}</title>
+      <link>{{ site.baseUrl }}{{ post.url }}</link>
+      <guid isPermaLink="true">{{ site.baseUrl }}{{ post.url }}</guid>
+      <pubDate>{{ post.date | isoDate }}</pubDate>
+      <dc:creator>{{ site.name }}</dc:creator>
+      {%- if post.data.summary %}
+      <description><![CDATA[{{ post.data.summary }}]]></description>
+      {%- endif %}
+      {%- if post.data.tags %}
+      {%- for tag in post.data.tags %}
+      <category>{{ tag }}</category>
+      {%- endfor %}
+      {%- endif %}
+    </item>
+    {%- endfor %}
+  </channel>
+</rss>

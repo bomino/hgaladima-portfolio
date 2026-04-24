@@ -8,9 +8,12 @@ schemaType: WebPage
 
 # CV
 
-<p class="cv-download"><a href="/assets/galadima-cv.docx" class="button button-primary">Download full CV (.docx)</a></p>
+<p class="cv-download">
+  <a href="/assets/galadima-cv.docx" class="button button-primary">Download full CV (.docx)</a>
+  <span class="cv-print-hint"><em>Need a PDF? <kbd>Ctrl</kbd>/<kbd>⌘</kbd> + <kbd>P</kbd> from this page gives a clean, letterhead-formatted print version.</em></span>
+</p>
 
-<p class="cv-updated"><em>Last updated February 1, 2026. For a PDF version, please <a href="/contact/">contact me</a> directly.</em></p>
+<p class="cv-updated"><em>Last updated February 1, 2026.</em></p>
 
 ## Education
 

@@ -1,0 +1,57 @@
+# Build + link-check CI.
+#
+# Runs on every push and PR. Catches the two most common breakages:
+# 1. Broken build (syntax error in templates, missing data file, etc.)
+# 2. Dead internal links (after a page is renamed, anchors forgotten)
+#
+# Does NOT gate the Cloudflare Pages deploy — CF builds independently
+# from the push. This CI is a shadow build that fails loudly if
+# something regresses, so Dr. G doesn't ship broken pages unnoticed.
+
+name: build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build-and-link-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build site
+        run: npm run build
+
+      - name: Verify expected files exist
+        run: |
+          set -e
+          for f in _site/index.html _site/sitemap.xml _site/robots.txt _site/feed.xml _site/blog/index.html; do
+            if [ ! -f "$f" ]; then
+              echo "MISSING: $f"
+              exit 1
+            fi
+            echo "OK: $f"
+          done
+
+      - name: Link check (internal only)
+        uses: lycheeverse/lychee-action@v1
+        with:
+          args: >-
+            --offline
+            --base _site
+            --include-fragments
+            --exclude-mail
+            '_site/**/*.html'
+          fail: true
+        continue-on-error: false

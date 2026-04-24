@@ -1084,6 +1084,25 @@ img, svg, video {
 
 .cv-download {
     margin: var(--space-m) 0 var(--space-xs);
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-m);
+    align-items: center;
+}
+
+.cv-print-hint {
+    font-size: var(--step--1);
+    color: var(--ink-muted);
+    line-height: 1.4;
+}
+
+.cv-print-hint kbd {
+    background: var(--surface);
+    border: 1px solid var(--divider);
+    border-radius: var(--radius-sm);
+    padding: 0.1em 0.35em;
+    font-family: var(--font-mono);
+    font-size: 0.85em;
 }
 
 .cv-updated {
@@ -1385,4 +1404,160 @@ img, svg, video {
 .pub-doi-link {
     font-family: var(--font-mono);
     font-size: 0.92em;
+}
+
+/* -------- Print stylesheet (primarily for /cv/) --------
+ * Browsers hitting Ctrl-P on any page should get a clean, letterhead-style
+ * layout with navigation/decoration stripped. Especially important for the
+ * CV page where printing is a real use case (job packets, tenure files).
+ */
+@media print {
+    :root {
+        /* Flatten to pure print-friendly values regardless of mode */
+        --paper: #ffffff;
+        --paper-elevated: #ffffff;
+        --surface: #ffffff;
+        --ink: #000000;
+        --ink-strong: #000000;
+        --ink-muted: #333333;
+        --ink-faint: #666666;
+        --divider: #cccccc;
+        --divider-strong: #999999;
+        --accent: #000000;
+        --warm: #333333;
+    }
+
+    body {
+        background: #ffffff;
+        color: #000000;
+        font-size: 10.5pt;
+        line-height: 1.45;
+    }
+
+    /* Hide UI chrome that doesn't belong on paper */
+    .site-header,
+    .site-footer,
+    .skip-link,
+    .nav-toggle,
+    .site-nav,
+    .button,
+    .hero-actions,
+    .post-footer,
+    .publication-cite-buttons,
+    .publication-cite-view,
+    .cv-download,
+    [data-site-header],
+    nav {
+        display: none !important;
+    }
+
+    main.site-main {
+        max-width: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    /* Typography — readable at print sizes, serif throughout for credibility */
+    body, p, li, td, th {
+        font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua",
+                     Palatino, Georgia, serif !important;
+    }
+
+    h1, h2, h3, h4 {
+        font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua",
+                     Palatino, Georgia, serif !important;
+        font-variation-settings: normal !important;
+        page-break-after: avoid;
+        color: #000 !important;
+        letter-spacing: 0 !important;
+    }
+
+    /* CV page: use a letterhead-style opening */
+    .site-main > article > h1:first-child {
+        font-size: 20pt;
+        margin: 0 0 4pt;
+        border-bottom: 1.5pt solid #000;
+        padding-bottom: 6pt;
+    }
+
+    .site-main > article > h2 {
+        font-size: 12pt;
+        margin-top: 14pt;
+        margin-bottom: 4pt;
+        border-bottom: 0.5pt solid #999;
+        padding-bottom: 2pt;
+    }
+
+    .site-main > article > h3 {
+        font-size: 11pt;
+        margin-top: 10pt;
+        margin-bottom: 2pt;
+    }
+
+    /* Compact lists and paragraphs for print density */
+    p, ul, ol {
+        margin: 4pt 0 !important;
+    }
+
+    ul, ol {
+        padding-left: 18pt !important;
+    }
+
+    li {
+        margin: 1.5pt 0 !important;
+    }
+
+    /* Links in body: still blue-ish for scanability, but not bright */
+    a, a:visited {
+        color: #000066 !important;
+        text-decoration: none !important;
+    }
+
+    /* Drop link URLs after external links — useful in print */
+    a[href^="http"]::after {
+        content: " (" attr(href) ")";
+        font-size: 8pt;
+        color: #555;
+        word-break: break-all;
+    }
+    a[href^="mailto:"]::after,
+    a[href^="tel:"]::after {
+        content: none;
+    }
+    /* Omit URL after internal links — noisy on printed CVs */
+    a[href^="/"]::after,
+    a:not([href^="http"])::after {
+        content: none;
+    }
+
+    /* CV-specific: avoid stranding section breaks */
+    .pub-list, .contact-grid {
+        page-break-inside: avoid;
+    }
+
+    .pub-entry {
+        page-break-inside: avoid;
+        margin-bottom: 4pt !important;
+        padding: 2pt 0 !important;
+        border: 0 !important;
+    }
+
+    /* Page size + margins — letter, 0.6in */
+    @page {
+        size: letter;
+        margin: 0.6in;
+    }
+
+    /* Remove decorative elements */
+    .reveal, .hero-portrait, .hero-mark,
+    .publication-cite, .publication-tags {
+        display: none !important;
+    }
+
+    .post-body > p:first-of-type::first-letter {
+        font-size: inherit !important;
+        float: none !important;
+        margin: 0 !important;
+        color: inherit !important;
+    }
 }
