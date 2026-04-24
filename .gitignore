@@ -20,3 +20,8 @@ Thumbs.db
 # Cloudflare Pages local state
 .wrangler/
 .dev.vars
+
+# User working files at repo root (processed copies live in src/assets/)
+/CV.docx
+/hg_pic.jpeg
+/*.pdf

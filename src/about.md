@@ -1,38 +1,53 @@
 ---
 layout: base.njk
 title: About
-description: About Dr. Hadiza Galadima — biostatistician, educator, and tool-builder at Old Dominion University.
+description: Dr. Hadiza Galadima — Associate Professor of Biostatistics at Old Dominion University. Research, teaching, and open-source tools for applied biostatistics in public health.
 permalink: /about/
 schemaType: WebPage
 ---
 
 # About
 
-{% raw %}{{ UPDATE: 2–3 paragraphs introducing yourself. Suggested flow: who you are academically, what draws you to biostatistics, your teaching philosophy in a line or two, your institutional home. Aim for ~200 words — warm but professional, no jargon in the first paragraph. }}{% endraw %}
+I'm an Associate Professor of Biostatistics in the Department of Epidemiology, Biostatistics, and Environmental Health at the Joint School of Public Health, Old Dominion University. My work sits at the intersection of statistical methodology and applied public-health research — with particular attention to cancer disparities, machine-learning approaches in health outcomes research, and the methods that let researchers draw defensible inferences from messy observational data.
+
+I earned my PhD in Biostatistics from Virginia Commonwealth University in 2015. My dissertation developed methods for controlling confounding when association is quantified by the area under the ROC curve — work that continues to inform my thinking about propensity scores, risk prediction, and how researchers communicate predictive accuracy to non-statisticians.
+
+Before coming to ODU I was an Assistant Professor at Eastern Virginia Medical School and a Senior Biostatistician at EVMS's Healthcare Analytics and Delivery Science Institute. I still carry the conviction I developed there: that a biostatistician's job is not to run tests but to be a thinking partner in the research — before the data are collected, not only after.
 
 ## Affiliations
 
-- **Primary**: {% raw %}{{ UPDATE: your exact title, e.g., 'Assistant Professor of Biostatistics' }}{% endraw %}, {% raw %}{{ UPDATE: School or Department name }}{% endraw %}, [Old Dominion University](https://www.odu.edu/)
-- **Adjunct / Visiting**: {% raw %}{{ UPDATE: any other appointments, or delete this bullet }}{% endraw %}
-- **Professional societies**: {% raw %}{{ UPDATE: ASA, ENAR, APHA — whichever apply }}{% endraw %}
+- **Primary**: Associate Professor (Tenured), [Department of Epidemiology, Biostatistics, and Environmental Health](https://www.odu.edu/), [Joint School of Public Health](https://www.odu.edu/), **Old Dominion University** — July 2025–present.
+- Previously Assistant Professor at ODU (2018–2025) and at Eastern Virginia Medical School (2015–2018).
 
 ## Education
 
-- {% raw %}{{ UPDATE: PhD in [field], [institution], [year] — with advisor name if you choose }}{% endraw %}
-- {% raw %}{{ UPDATE: MS / MPH degree, institution, year }}{% endraw %}
-- {% raw %}{{ UPDATE: Bachelor's degree, institution, year }}{% endraw %}
+- **PhD in Biostatistics** — Virginia Commonwealth University, 2015
+  Dissertation: *Controlling for confounding when association is quantified by area under the ROC curve.*
+- **BS in Statistics** (Actuarial Science emphasis, *Magna Cum Laude*) — St. Cloud State University, 2008.
+- **AAS in Graphic Design** — Washtenaw Community College, 2006.
+- **DEUG in Physics and Chemistry** — Université Hassan II du Maroc, 2001.
 
-## What I do
+## Professional memberships & service
 
-**Research.** {% raw %}{{ UPDATE: 2–3 sentences on your research interests. Name 2–3 specific methodological or substantive areas — e.g., 'methods for small-sample inference in health-disparities research, statistical evaluation of community-health interventions, and robust approaches to the analysis of categorical outcomes.' }}{% endraw %}
+- **American Statistical Association (ASA)** — member since 2017; appointed member of the Committee on International Relations in Statistics.
+- **Statistics Without Borders** — member and pro-bono consultant since 2010.
+- **American Public Health Association (APHA)** — member; annual-meeting volunteer abstract reviewer.
+- **Virginia Academy of Science** — fund-raising committee member.
+- **International Biometric Society** — member.
 
-**Teaching.** I teach applied biostatistics to graduate public-health students. My goal is for students to leave the course able to read a paper critically and run (and interpret!) the three or four tests they'll actually use in practice. See the [teaching page](/teaching/) for details and the open tools I've built for my students.
+## Recent honors
 
-**Service.** {% raw %}{{ UPDATE: any editorial, review, or service roles — ASA sections, journal review, NIH study sections, departmental committees. Keep to 3–5 bullets. }}{% endraw %}
+- **NIH AIM-AHEAD & NCATS Training Program** — Selected Trainee, Cohort 3 (2025).
+- **American Statistical Association** — Outstanding Teaching Award, Teaching of Statistics in the Health Sciences Section (2023).
+- **NIH Data Scholar** — *Data Science for Science Teachers Boot Camp* (2021) and *Harnessing Data Science for Health Discovery & Innovation in Africa* (2020).
+- **NIH-NSF Data Science Innovation Lab Fellowship** (2019).
+- **Crystal Apple Award for Teaching Excellence**, EVMS Student Government Association (2018).
 
 ## Elsewhere online
 
-- ORCID: {% raw %}[0000-0000-0000-0000](https://orcid.org/0000-0000-0000-0000){% endraw %} — {% raw %}{{ UPDATE: replace with your real ORCID }}{% endraw %}
+- ORCID: {% raw %}{{ UPDATE: 0000-0000-0000-0000 }}{% endraw %}
 - Google Scholar: {% raw %}{{ UPDATE: your Scholar profile URL }}{% endraw %}
 - LinkedIn: {% raw %}{{ UPDATE: your LinkedIn URL }}{% endraw %}
-- ODU faculty page: {% raw %}{{ UPDATE: your ODU directory URL }}{% endraw %}
+- ODU directory: [odu.edu/directory/people/h/hgaladim](https://www.odu.edu/directory/people/h/hgaladim)
+
+See the [CV](/cv/) for the full record, or the [Research](/research/) page for publications and current projects.
