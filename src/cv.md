@@ -8,7 +8,7 @@ schemaType: WebPage
 
 # CV
 
-<p class="cv-print-hint"><em>Need a PDF? <kbd>Ctrl</kbd>/<kbd>⌘</kbd> + <kbd>P</kbd> from this page gives a clean, letterhead-formatted print version.</em></p>
+<p class="cv-print-hint"><em><kbd>Ctrl</kbd>/<kbd>⌘</kbd> + <kbd>P</kbd> to save as PDF.</em></p>
 
 <p class="cv-updated"><em>Last updated February 1, 2026.</em></p>
 
