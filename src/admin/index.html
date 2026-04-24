@@ -105,21 +105,51 @@
         box-shadow: 0 8px 24px -8px oklch(18% 0.02 260 / 0.12) !important;
     }
 
-    /* The logo image (config.yml logo_url) — rendered as the portrait with a
-       warm halo ring matching the main-site nav avatar. Targets the first img
-       inside the authentication page since Decap emits the logo that way. */
+    /* Shared treatment for the logo_url image — circle, warm halo, matches
+       the main-site nav avatar. Decap renders the same image in two places:
+       1. Big and centered on the login screen
+       2. Small inline in the top-left of the app header once logged in
+       Base rule handles crop + halo; size/positioning rules below differentiate. */
+    [class*="AuthenticationPage"] img,
+    [class*="GitHubAuthenticationPage"] img,
+    [class*="AppHeader"] img,
+    [class*="HeaderContainer"] img,
+    header img {
+        border-radius: 50% !important;
+        object-fit: cover !important;
+        border: 1px solid var(--hg-divider) !important;
+        background: var(--hg-surface) !important;
+    }
+
+    /* Login screen: big centered portrait with prominent halo */
     [class*="AuthenticationPage"] img,
     [class*="GitHubAuthenticationPage"] img {
         width: 96px !important;
         height: 96px !important;
-        border-radius: 50% !important;
-        object-fit: cover !important;
-        border: 1px solid var(--hg-divider) !important;
-        box-shadow: 0 0 0 3px var(--hg-paper-elevated),
-                    0 0 0 5px color-mix(in oklch, var(--hg-warm) 55%, transparent) !important;
-        background: var(--hg-surface) !important;
         margin: 0 auto 1.5rem !important;
         display: block !important;
+        box-shadow: 0 0 0 3px var(--hg-paper-elevated),
+                    0 0 0 5px color-mix(in oklch, var(--hg-warm) 55%, transparent) !important;
+    }
+
+    /* In-editor app header: 32px avatar with a subtler halo that doesn't
+       compete with the content once you're actually editing. */
+    [class*="AppHeader"] img,
+    [class*="HeaderContainer"] img,
+    header img {
+        width: 32px !important;
+        height: 32px !important;
+        box-shadow: 0 0 0 2px var(--hg-paper-elevated),
+                    0 0 0 3px color-mix(in oklch, var(--hg-warm) 50%, transparent) !important;
+        transition: transform 160ms, box-shadow 160ms;
+    }
+
+    [class*="AppHeader"] img:hover,
+    [class*="HeaderContainer"] img:hover,
+    header img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 2px var(--hg-paper-elevated),
+                    0 0 0 3px var(--hg-warm) !important;
     }
 
     /* Primary buttons — accent blue, warm hover, Inter weight, gentle radius */
