@@ -10,12 +10,13 @@ module.exports = {
     tagline: 'Associate Professor of Biostatistics at Old Dominion University. Research and teaching at the intersection of statistical methods, public-health disparities, and open educational tools.',
     email: 'hgaladim@odu.edu',
 
-    // Identity — thread into Person JSON-LD sameAs.
-    // Items still marked UPDATE: are filtered out of JSON-LD automatically.
+    // Identity — thread into Person JSON-LD sameAs for Google's Knowledge
+    // Graph. Each populated value strengthens the entity linkage between
+    // hgaladima.com and her publication / profile records across platforms.
     identity: {
-        orcid: 'UPDATE: 0000-0000-0000-0000',
-        scholar: 'UPDATE: https://scholar.google.com/citations?user=YOURID',
-        linkedin: 'UPDATE: https://www.linkedin.com/in/hadiza-galadima/',
+        orcid: '0000-0003-1588-3929',
+        scholar: 'https://scholar.google.com/citations?hl=en&user=G7In2sYAAAAJ',
+        linkedin: 'https://www.linkedin.com/in/hadizagaladima/',
         odu: 'https://www.odu.edu/directory/people/h/hgaladim',
         github: '',
     },

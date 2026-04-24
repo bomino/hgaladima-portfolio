@@ -45,9 +45,9 @@ Before coming to ODU I was an Assistant Professor at Eastern Virginia Medical Sc
 
 ## Elsewhere online
 
-- ORCID: {% raw %}{{ UPDATE: 0000-0000-0000-0000 }}{% endraw %}
-- Google Scholar: {% raw %}{{ UPDATE: your Scholar profile URL }}{% endraw %}
-- LinkedIn: {% raw %}{{ UPDATE: your LinkedIn URL }}{% endraw %}
+- ORCID: [0000-0003-1588-3929](https://orcid.org/0000-0003-1588-3929)
+- Google Scholar: [scholar.google.com/citations?user=G7In2sYAAAAJ](https://scholar.google.com/citations?hl=en&user=G7In2sYAAAAJ)
+- LinkedIn: [linkedin.com/in/hadizagaladima](https://www.linkedin.com/in/hadizagaladima/)
 - ODU directory: [odu.edu/directory/people/h/hgaladim](https://www.odu.edu/directory/people/h/hgaladim)
 
 See the [CV](/cv/) for the full record, or the [Research](/research/) page for publications and current projects.

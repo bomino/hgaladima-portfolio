@@ -31,9 +31,9 @@ Norfolk, VA 23529
 <section class="contact-card">
 <h2>Elsewhere</h2>
 <ul class="contact-links">
-<li>ORCID: {% raw %}{{ UPDATE: 0000-0000-0000-0000 }}{% endraw %}</li>
-<li>Google Scholar: {% raw %}{{ UPDATE: scholar profile URL }}{% endraw %}</li>
-<li>LinkedIn: {% raw %}{{ UPDATE: linkedin URL }}{% endraw %}</li>
+<li>ORCID: <a href="https://orcid.org/0000-0003-1588-3929">0000-0003-1588-3929</a></li>
+<li>Google Scholar: <a href="https://scholar.google.com/citations?hl=en&user=G7In2sYAAAAJ">scholar.google.com</a></li>
+<li>LinkedIn: <a href="https://www.linkedin.com/in/hadizagaladima/">linkedin.com/in/hadizagaladima</a></li>
 <li>ODU directory: <a href="https://www.odu.edu/directory/people/h/hgaladim">odu.edu/directory</a></li>
 </ul>
 </section>
