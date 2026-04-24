@@ -5,7 +5,215 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
   <title>Content editor — hgaladima.com</title>
-  <link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+
+  <!-- Favicon: use the portrait so the browser tab matches the live-site nav -->
+  <link rel="icon" href="/assets/photo.jpg" type="image/jpeg">
+  <link rel="apple-touch-icon" href="/assets/photo.jpg">
+
+  <!-- Site fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,400..700,0..80;1,9..144,400..700,0..80&family=Inter:wght@400..700&display=swap">
+
+  <style>
+    /*
+     * hgaladima.com admin skin.
+     *
+     * Decap CMS is a React app bundled via CDN and uses Emotion for internal
+     * styling with generated class names, so deep overrides are brittle.
+     * These rules target stable surfaces (body, headings, primary buttons,
+     * form inputs) to align the admin with the main-site identity without
+     * fighting the framework.
+     */
+
+    :root {
+        --hg-paper: oklch(98% 0.008 80);
+        --hg-paper-elevated: oklch(100% 0 0);
+        --hg-surface: oklch(97% 0.006 80);
+        --hg-ink: oklch(18% 0.02 260);
+        --hg-ink-strong: oklch(12% 0.02 260);
+        --hg-ink-muted: oklch(45% 0.015 260);
+        --hg-divider: oklch(90% 0.008 260);
+        --hg-accent: oklch(52% 0.17 246);
+        --hg-accent-hover: oklch(44% 0.19 246);
+        --hg-warm: oklch(62% 0.14 55);
+        --hg-font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+        --hg-font-serif: 'Fraunces', 'Iowan Old Style', 'Apple Garamond', Baskerville, 'Times New Roman', serif;
+        --hg-radius: 0.75rem;
+        --hg-radius-sm: 0.375rem;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --hg-paper: oklch(14% 0.02 260);
+            --hg-paper-elevated: oklch(17% 0.02 260);
+            --hg-surface: oklch(19% 0.02 260);
+            --hg-ink: oklch(92% 0.015 80);
+            --hg-ink-strong: oklch(98% 0.005 80);
+            --hg-ink-muted: oklch(70% 0.018 80);
+            --hg-divider: oklch(28% 0.02 260);
+            --hg-accent: oklch(72% 0.15 246);
+            --hg-accent-hover: oklch(82% 0.13 246);
+            --hg-warm: oklch(72% 0.13 55);
+        }
+    }
+
+    html, body {
+        background: var(--hg-paper) !important;
+        color: var(--hg-ink) !important;
+        font-family: var(--hg-font-sans) !important;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    /* Decap's root container */
+    #nc-root,
+    #nc-root > div,
+    [class*="AppMainContainer"] {
+        background: var(--hg-paper) !important;
+        font-family: var(--hg-font-sans) !important;
+        color: var(--hg-ink) !important;
+    }
+
+    /* Headings everywhere: Fraunces display with matching optical size */
+    h1, h2, h3, h4,
+    [class*="-title"],
+    [class*="Title-"] {
+        font-family: var(--hg-font-serif) !important;
+        font-variation-settings: 'opsz' 96, 'SOFT' 0 !important;
+        letter-spacing: -0.02em !important;
+        color: var(--hg-ink-strong) !important;
+    }
+
+    h1, [class*="PageTitle"], [class*="page-title"] {
+        font-size: 2rem !important;
+        font-weight: 400 !important;
+        line-height: 1.1 !important;
+    }
+
+    /* Login / authentication page — the most visible branding moment.
+       Decap renders a centered card; we warm its surface and round its corners. */
+    [class*="AuthenticationPage"],
+    [class*="GitHubAuthenticationPage"] {
+        background: var(--hg-paper) !important;
+    }
+
+    [class*="AuthenticationPage"] > div,
+    [class*="AuthenticationPage"] > section {
+        background: var(--hg-paper-elevated) !important;
+        border: 1px solid var(--hg-divider) !important;
+        border-radius: var(--hg-radius) !important;
+        box-shadow: 0 8px 24px -8px oklch(18% 0.02 260 / 0.12) !important;
+    }
+
+    /* Primary buttons — accent blue, warm hover, Inter weight, gentle radius */
+    button[type="button"],
+    button[type="submit"],
+    [class*="LoginButton"],
+    [class*="LoginButtonIcon"],
+    [class*="PublishButton"],
+    [class*="SaveButton"],
+    button[class*="Button-"] {
+        font-family: var(--hg-font-sans) !important;
+        font-weight: 500 !important;
+        letter-spacing: -0.005em !important;
+    }
+
+    /* GitHub login button in particular: match the site's .button-primary */
+    [class*="LoginButton"]:not([class*="icon"]) {
+        background: var(--hg-ink-strong) !important;
+        color: var(--hg-paper) !important;
+        border-radius: var(--hg-radius) !important;
+        padding: 0.75rem 1.5rem !important;
+        transition: background 160ms, transform 160ms;
+    }
+
+    [class*="LoginButton"]:not([class*="icon"]):hover {
+        background: var(--hg-accent) !important;
+        color: #fff !important;
+        transform: translateY(-1px);
+    }
+
+    /* App header (top bar) */
+    [class*="AppHeader"],
+    [class*="AppHeaderContainer"],
+    header[class*="Header"] {
+        background: var(--hg-paper-elevated) !important;
+        border-bottom: 1px solid var(--hg-divider) !important;
+        color: var(--hg-ink) !important;
+    }
+
+    /* Sidebar (collections list) */
+    [class*="Sidebar"],
+    aside[class*="sidebar"],
+    [class*="CollectionsList"] {
+        background: var(--hg-surface) !important;
+        border-right: 1px solid var(--hg-divider) !important;
+    }
+
+    /* Form controls — inputs, textareas, selects */
+    input[type="text"],
+    input[type="email"],
+    input[type="url"],
+    input[type="number"],
+    input[type="search"],
+    input[type="date"],
+    input[type="datetime-local"],
+    textarea,
+    select,
+    [class*="ControlContainer"] input,
+    [class*="ControlContainer"] textarea {
+        font-family: var(--hg-font-sans) !important;
+        border-radius: var(--hg-radius-sm) !important;
+        border-color: var(--hg-divider) !important;
+        background: var(--hg-paper-elevated) !important;
+        color: var(--hg-ink) !important;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+        outline: 2px solid var(--hg-accent) !important;
+        outline-offset: 2px !important;
+        border-color: var(--hg-accent) !important;
+    }
+
+    /* Links */
+    a { color: var(--hg-accent) !important; }
+    a:hover { color: var(--hg-accent-hover) !important; }
+
+    /* Card surfaces in the entry/preview list */
+    [class*="Card"],
+    [class*="Entry-"] {
+        border-radius: var(--hg-radius) !important;
+        border: 1px solid var(--hg-divider) !important;
+    }
+
+    /* Toast notifications: warm the accent */
+    .Toastify__toast,
+    [class*="Toastify"] {
+        font-family: var(--hg-font-sans) !important;
+        border-radius: var(--hg-radius-sm) !important;
+    }
+
+    /* Editor chrome — markdown editor toolbar */
+    [class*="Toolbar"],
+    [class*="EditorToolbar"] {
+        background: var(--hg-paper-elevated) !important;
+        border-bottom: 1px solid var(--hg-divider) !important;
+    }
+
+    /* Accessibility: focus rings follow our accent */
+    *:focus-visible {
+        outline: 2px solid var(--hg-accent) !important;
+        outline-offset: 2px !important;
+    }
+
+    /* Selection colour matches the main site */
+    ::selection {
+        background: oklch(62% 0.14 55 / 0.22) !important;
+        color: var(--hg-ink-strong) !important;
+    }
+  </style>
 </head>
 <body>
   <script src="https://unpkg.com/decap-cms@^3.3.3/dist/decap-cms.js"></script>
