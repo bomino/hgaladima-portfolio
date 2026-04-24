@@ -20,26 +20,16 @@ My research program sits at the intersection of **statistical methodology** and 
 
 **By the numbers**: 20 peer-reviewed journal articles, 19 published abstracts, 54 conference presentations, 8 invited talks. Principal Investigator on 9 awarded grants in cancer, machine-learning, and health-disparities research.
 
-## Publications
+## Selected Publications
 
-<p class="research-note"><em>All {{ publications.publications.length }} peer-reviewed journal articles. Each title links to its own page with plain-English summary and citation-ready BibTeX &amp; RIS export. Grouped by year, newest first.</em></p>
-
-{% set currentYear = 0 %}
 <ul class="pub-list">
 {% for pub in publications.publications %}
-  {% if pub.year != currentYear %}
-    {% set currentYear = pub.year %}
-<li class="pub-year-label">{{ pub.year }}</li>
-  {% endif %}
 <li class="pub-entry">
-  <h3 class="pub-entry-title"><a href="/research/pub/{{ pub.slug }}/">{{ pub.title }}</a></h3>
-  <p class="pub-entry-authors">{% for a in pub.authors %}<span class="pub-entry-author{% if a.startsWith('Galadima') %} is-self{% endif %}">{{ a }}</span>{% if not loop.last %}{% if loop.revindex0 == 1 %}, &amp; {% else %}, {% endif %}{% endif %}{% endfor %}</p>
+  <h3 class="pub-entry-title">{% if pub.url %}<a href="{{ pub.url }}" rel="external">{{ pub.title }}</a>{% else %}{{ pub.title }}{% endif %}</h3>
+  <p class="pub-entry-authors">{% for a in pub.authors %}<span class="pub-entry-author{% if a.startsWith('Galadima') %} is-self{% endif %}">{{ a }}</span>{% if not loop.last %}{% if loop.revindex0 == 1 %}, &amp; {% else %}, {% endif %}{% endif %}{% endfor %} ({{ pub.year }})</p>
   <p class="pub-entry-venue"><em>{{ pub.journal }}</em>{% if pub.volume %}, {{ pub.volume }}{% if pub.issue %}({{ pub.issue }}){% endif %}{% endif %}{% if pub.pages %}, {{ pub.pages }}{% endif %}</p>
   {% if pub.summary %}<p class="pub-entry-summary">{{ pub.summary }}</p>{% endif %}
-  <p class="pub-entry-footer">
-    {% if pub.tags and pub.tags.length %}<span class="pub-entry-tags">{% for tag in pub.tags %}<span class="pub-entry-tag">#{{ tag }}</span>{% endfor %}</span>{% endif %}
-    {% if pub.doi %}<a href="{{ pub.url }}" class="pub-entry-doi" rel="external">doi:{{ pub.doi }}</a>{% endif %}
-  </p>
+  {% if pub.tags and pub.tags.length %}<p class="pub-entry-footer"><span class="pub-entry-tags">{% for tag in pub.tags %}<span class="pub-entry-tag">#{{ tag }}</span>{% endfor %}</span></p>{% endif %}
 </li>
 {% endfor %}
 </ul>
