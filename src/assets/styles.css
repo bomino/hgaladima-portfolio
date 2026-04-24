@@ -968,30 +968,18 @@ img, svg, video {
     padding-bottom: var(--space-xs);
 }
 
-/* -------- Contact page grid -------- */
+/* -------- Contact page -------- */
 
-.contact-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-    gap: var(--space-m);
-    margin: var(--space-l) 0;
-}
-
-.contact-card {
+.contact-elsewhere {
     background: var(--surface);
     border: 1px solid var(--divider);
     border-radius: var(--radius);
-    padding: var(--space-m);
-    transition: border-color var(--dur) var(--ease-out),
-                transform var(--dur) var(--ease-out);
+    padding: var(--space-m) var(--space-l);
+    margin: var(--space-l) 0 var(--space-xl);
+    max-width: var(--measure);
 }
 
-.contact-card:hover {
-    border-color: var(--warm);
-    transform: translateY(-2px);
-}
-
-.contact-card h2 {
+.contact-elsewhere h2 {
     margin-top: 0;
     font-family: var(--font-body);
     font-size: var(--step--1);
@@ -999,14 +987,8 @@ img, svg, video {
     text-transform: uppercase;
     letter-spacing: 0.14em;
     color: var(--warm);
-    padding-bottom: var(--space-2xs);
+    padding-bottom: 0;
     border: none;
-}
-
-.contact-note {
-    font-size: var(--step--1);
-    color: var(--ink-muted);
-    margin-top: var(--space-xs);
 }
 
 .contact-links {
@@ -1412,7 +1394,7 @@ img, svg, video {
     }
 
     /* CV-specific: avoid stranding section breaks */
-    .pub-list, .contact-grid {
+    .pub-list {
         page-break-inside: avoid;
     }
 
