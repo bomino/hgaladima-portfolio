@@ -970,36 +970,168 @@ img, svg, video {
 
 /* -------- Contact page -------- */
 
-.contact-elsewhere {
-    background: var(--surface);
-    border: 1px solid var(--divider);
-    border-radius: var(--radius);
-    padding: var(--space-m) var(--space-l);
-    margin: var(--space-l) 0 var(--space-xl);
-    max-width: var(--measure);
+.contact-lede {
+    font-family: var(--font-display);
+    font-variation-settings: "opsz" 18, "SOFT" 20;
+    font-size: var(--step-1);
+    line-height: 1.45;
+    color: var(--ink-muted);
+    max-width: 50ch;
+    margin: 0 0 var(--space-xl);
+    text-wrap: balance;
 }
 
-.contact-elsewhere h2 {
-    margin-top: 0;
-    font-family: var(--font-body);
+.contact-card {
+    padding: var(--space-l) var(--space-l) var(--space-xl);
+    border-radius: var(--radius-lg);
+    margin: 0 0 var(--space-m);
+    border: 1px solid var(--divider);
+    background: var(--paper-elevated);
+    max-width: var(--measure);
+    transition: transform var(--dur) var(--ease-out),
+                box-shadow var(--dur) var(--ease-out);
+}
+
+.contact-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+
+.contact-card-primary {
+    background: var(--warm-soft);
+    border-color: color-mix(in oklch, var(--warm) 30%, transparent);
+}
+
+.contact-card-secondary {
+    background: var(--surface);
+}
+
+.contact-card-head {
+    margin-bottom: var(--space-m);
+}
+
+.contact-card-kicker {
     font-size: var(--step--1);
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.14em;
     color: var(--warm);
-    padding-bottom: 0;
+    margin: 0 0 var(--space-2xs);
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+}
+
+.contact-card-kicker::before {
+    content: "";
+    display: inline-block;
+    width: 1.75rem;
+    height: 1px;
+    background: var(--warm);
+}
+
+.contact-card-title {
+    font-family: var(--font-display);
+    font-variation-settings: "opsz" 72, "SOFT" 0;
+    font-size: var(--step-3);
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    color: var(--ink-strong);
+    margin: 0;
+    text-wrap: balance;
     border: none;
+    padding-bottom: 0;
+}
+
+.contact-card-lede {
+    font-size: var(--step-0);
+    line-height: 1.6;
+    color: var(--ink);
+    margin: var(--space-s) 0;
+    max-width: 52ch;
+}
+
+.contact-card-services {
+    margin: var(--space-s) 0 var(--space-m);
+    padding-left: var(--space-m);
+    max-width: 58ch;
+}
+
+.contact-card-services li {
+    margin: var(--space-2xs) 0;
+    color: var(--ink);
+    line-height: 1.5;
+}
+
+.contact-card-services li::marker {
+    color: var(--warm);
+}
+
+.contact-card-note {
+    font-family: var(--font-display);
+    font-variation-settings: "opsz" 18, "SOFT" 20;
+    font-style: italic;
+    font-size: var(--step-0);
+    line-height: 1.5;
+    color: var(--ink-muted);
+    margin: var(--space-m) 0 var(--space-l);
+    max-width: 52ch;
+}
+
+.contact-card-cta {
+    margin: var(--space-l) 0 0;
+}
+
+/* Elsewhere — understated reference list at the bottom */
+.contact-elsewhere {
+    margin: var(--space-xl) 0 var(--space-l);
+    padding-top: var(--space-l);
+    border-top: 1px solid var(--divider);
+    max-width: var(--measure);
+}
+
+.contact-elsewhere-kicker {
+    font-size: var(--step--1);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--warm);
+    margin: 0 0 var(--space-s);
 }
 
 .contact-links {
     list-style: none;
     padding: 0;
     margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    gap: var(--space-2xs) var(--space-l);
 }
 
 .contact-links li {
-    padding: var(--space-3xs) 0;
+    padding: var(--space-2xs) 0;
     font-size: var(--step--1);
+    display: flex;
+    gap: var(--space-xs);
+    align-items: baseline;
+    flex-wrap: wrap;
+}
+
+.contact-link-label {
+    color: var(--ink-muted);
+    font-weight: 500;
+    min-width: 6rem;
+}
+
+.contact-links a {
+    color: var(--ink);
+    border-bottom: none;
+    transition: color var(--dur-fast) var(--ease-out);
+}
+
+.contact-links a:hover {
+    color: var(--accent);
 }
 
 /* -------- Research page — richer publication list --------
