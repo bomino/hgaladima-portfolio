@@ -1,8 +1,8 @@
 # Decap CMS setup — one-time GitHub OAuth app registration + CF env vars
 
-Decap CMS (formerly Netlify CMS) is the browser-based admin UI at `https://hgaladima.com/admin/`. It authenticates against GitHub so Dr. G can create, edit, and publish blog posts without ever leaving the browser.
+Decap CMS (formerly Netlify CMS) is the browser-based admin UI at `https://hgaladima.com/admin/`. It authenticates against GitHub so Dr. G can create, edit, and publish content (blog posts, publications, talks) without ever leaving the browser.
 
-This doc walks through the one-time setup. You do this **once**, then forget about it.
+> **Status (April 2026):** completed. The OAuth app is registered, env vars are set, and the admin is live. This doc is the canonical reference if the OAuth credentials need to be rotated, a TA needs to be added as a collaborator, or the project ever needs to be re-deployed.
 
 ## Architecture
 
@@ -94,8 +94,16 @@ If `base_url` still says `https://api.netlify.com`, the fix was missed — updat
 3. Click it. A popup asks you to authorize the `hgaladima.com CMS` OAuth app to access your GitHub account.
 4. Click **Authorize**. The popup shows "Signed in — returning to the admin panel…" briefly, then closes.
 5. You're now logged into the admin UI.
-6. Create a post: **Blog posts** → **New Blog post** → fill title/date/summary → write in the editor → **Publish**.
-7. Behind the scenes: Decap commits the new `.md` file to `main`, CF Pages rebuilds, your post is live in ~60 seconds.
+6. Pick a collection — **Blog posts**, **Publications**, or **Talks** — and click *New*. Fill in the fields and click **Publish**.
+7. Behind the scenes: Decap commits the new file to `main`, CF Pages rebuilds, your change is live in ~60 seconds.
+
+### What each collection edits
+
+| Collection | Source file | Output |
+|---|---|---|
+| Blog posts | `src/blog/*.md` (one file per post) | `/blog/` index + per-post pages |
+| Publications | `src/_data/publications.json` (single file, list widget) | List on `/research/`, with title linking to the DOI |
+| Talks | `src/_data/talks.json` (single file, list widget) | Auto-bucketed Upcoming / Recent / Earlier on `/speaking/` |
 
 ## Troubleshooting
 

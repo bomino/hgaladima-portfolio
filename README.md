@@ -1,6 +1,6 @@
 # hgaladima.com
 
-Personal portfolio + blog for Dr. Hadiza Galadima. Eleventy (11ty) static site served from `hgaladima.com` via Cloudflare Pages.
+Personal portfolio + blog for Hadiza Galadima, PhD. Eleventy (11ty) static site served from `hgaladima.com` via Cloudflare Pages.
 
 Sibling properties (separate deploys):
 - `ztchi.hgaladima.com` — Z-t-Chi biostatistics calculator (student-facing)
@@ -14,24 +14,23 @@ You do not need to touch a terminal, git, or any code. Posting is:
 
 1. Open `https://hgaladima.com/admin/` in any browser.
 2. Click **Login with GitHub** (one-time OAuth).
-3. Click **New Post** under the Blog collection.
-4. Fill in title, date, summary, tags. Write the post in the visual markdown editor. Drag images into the editor to upload them.
-5. Click **Publish**. Your post goes live within ~60 seconds.
+3. Pick a collection — **Blog posts**, **Publications**, or **Talks** — and click *New*.
+4. Fill in the fields. For blog posts, write in the visual markdown editor and drag images directly into the editor.
+5. Click **Publish**. The site rebuilds and the change goes live in ~60 seconds.
 
-Posts you publish are saved as markdown files in the GitHub repo — you own your content forever.
+Posts and data files are saved as plain markdown / JSON in the GitHub repo — you own your content forever.
 
-### Updating portfolio pages
+### What lives in each collection
 
-The six core pages (`About`, `Research`, `Teaching`, `CV`, `Contact`, home) live as markdown / Nunjucks files in `src/`. The CMS can edit them once they're configured as pages in the CMS UI. For now they're hand-edited; ask your engineering collaborator to add them to `admin/config.yml` if you want CMS editing.
+| Collection | Edits | What appears on the site |
+|---|---|---|
+| **Blog posts** | `src/blog/*.md` | New entry on `/blog/` and the home page Recent section |
+| **Publications** | `src/_data/publications.json` | Adds an item to the list on `/research/` (links direct to the DOI) |
+| **Talks** | `src/_data/talks.json` | Auto-routes to Upcoming / Recent / Earlier on `/speaking/` based on date |
 
-### Placeholders
+### Pages with hand-edited content
 
-Every field Dr. G needs to fill in is marked with `{{ UPDATE: ... }}`. Do a find-and-replace across the repo to surface them all. Critical:
-- ORCID ID (threads into Person JSON-LD for Google scholar profile)
-- Google Scholar profile URL
-- LinkedIn URL
-- ODU faculty page URL
-- Real 1200×630 headshot or branded social image
+The structural pages (`About`, `Research`, `Teaching`, `Speaking`, `Mentoring`, `CV`, `Contact`, home) live as Markdown / Nunjucks files in `src/`. They aren't currently exposed in the CMS — for tweaks, ask your engineering collaborator (or open the file directly on github.com and use the web editor).
 
 ---
 
@@ -46,27 +45,38 @@ npm run build   # produces _site/
 npm run clean   # wipes _site/
 ```
 
-### Node version
+Requires Node 18+. Cloudflare Pages pins to Node 20 via `NODE_VERSION` env var.
 
-Requires Node 18+. Cloudflare Pages uses the `NODE_VERSION=20` environment variable to pin the build runtime.
-
-### Directory layout
+### Repository layout
 
 ```
+.eleventy.js                 # 11ty config: filters, passthroughs, collections
+.github/workflows/build.yml  # CI: build + offline link check on every push/PR
+package.json                 # @11ty/eleventy + markdown-it deps
 src/
-├── _data/        # site.js — nav, social links, ORCID
-├── _includes/    # base.njk, head.njk, header.njk, footer.njk, post.njk
-├── assets/       # styles.css, icon.svg, photo, og-default
-├── admin/        # Decap CMS admin UI (served at /admin/)
-├── blog/         # Markdown posts + blog.njk index
-├── index.njk     # Landing page
-├── about.md      # 6 portfolio pages
-├── research.md
-├── teaching.md
-├── cv.md
-├── contact.md
-├── sitemap.njk   # Generates /sitemap.xml
-└── robots.njk    # Generates /robots.txt
+├── _data/
+│   ├── site.js              # Identity, nav, social URLs (sameAs in JSON-LD)
+│   ├── seo.js               # Default OG/Twitter meta + descriptions
+│   ├── publications.json    # 20 papers, drives /research/
+│   └── talks.json           # 12 talks, auto-grouped by date on /speaking/
+├── _includes/               # base.njk, head.njk, header.njk, footer.njk, post.njk
+├── admin/                   # Decap CMS UI + config.yml (3 collections)
+├── assets/                  # styles.css, photo.jpg, og-default.{svg,png}, etc.
+├── blog/                    # Blog posts + blog.njk index
+├── about.md / contact.md / cv.md / research.md / teaching.md
+├── mentoring.md             # Prospective-students page
+├── speaking.njk             # Talks page (data-driven from talks.json)
+├── feed.njk                 # /feed.xml RSS
+├── sitemap.njk              # /sitemap.xml
+├── robots.njk               # /robots.txt
+└── index.njk                # Home
+functions/
+├── api/auth.js              # Decap OAuth: redirect to GitHub authorize
+└── api/callback.js          # Decap OAuth: exchange code → token → postMessage
+docs/
+├── setup.md                 # CF Pages + DNS one-time setup
+├── decap-cms-setup.md       # GitHub OAuth app registration
+└── seo-maintenance.md       # Pre/post-launch SEO checklist
 ```
 
 ### SEO
@@ -74,12 +84,22 @@ src/
 Every page emits:
 - Unique `<title>` + `<meta name="description">`
 - `<link rel="canonical">`
-- Open Graph + Twitter Card tags
-- Page-type-appropriate JSON-LD (Person, WebSite, BlogPosting, Course, etc.)
-- `og:image` fallback to `/assets/og-default.png`
+- Open Graph + Twitter Card (PNG OG image at `/assets/og-default.png`)
+- Page-type-appropriate JSON-LD (Person, BlogPosting, Course, WebPage, CollectionPage)
+- `link rel="alternate"` to `/feed.xml`
 
-See `docs/seo-maintenance.md` for how to keep SEO artifacts fresh.
+Search-engine + AI-crawler sitemaps regenerate on every build from the canonical data files. See `docs/seo-maintenance.md` for the post-launch checklist (Search Console, Bing Webmaster, etc.).
+
+### CI
+
+`.github/workflows/build.yml` runs on push + PR:
+1. `npm ci`
+2. `npm run build`
+3. Verifies expected files exist (`index.html`, `sitemap.xml`, `robots.txt`, `feed.xml`, `blog/index.html`)
+4. Internal-link check via `lycheeverse/lychee-action@v2` (URL paths only — fragments skipped to avoid false positives from markdown-it-anchor permalinks).
+
+Independent of Cloudflare Pages' own build; catches regressions in shadow.
 
 ### Deployment
 
-Cloudflare Pages auto-deploys on every push to `main`. See `docs/setup.md` for one-time project creation and custom-domain binding. See `docs/decap-cms-setup.md` for the GitHub OAuth app registration (required once for CMS login).
+Cloudflare Pages auto-deploys on every push to `main`. See `docs/setup.md` for one-time project creation, custom-domain binding, and `www → apex` redirect. See `docs/decap-cms-setup.md` for the one-time GitHub OAuth app registration that powers the `/admin/` login.

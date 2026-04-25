@@ -1,12 +1,14 @@
 # Cloudflare Pages setup — hgaladima.com
 
-One-time deploy and custom-domain binding for the portfolio site. Assumes the GitHub repo already exists and has the scaffold pushed.
+One-time deploy and custom-domain binding for the portfolio site.
+
+> **Status (April 2026):** completed. The site is live at `https://hgaladima.com`. This guide is preserved as the canonical reference if the project ever needs to be re-deployed (new account, new repo, new contributor onboarding).
 
 ## Prerequisites
 
-- Cloudflare account with `hgaladima.com` already on your account (nameservers pointing to CF — you did this when you set up `ztchi.hgaladima.com` and `teach.hgaladima.com`).
-- GitHub repo `UPDATE-OWNER/hgaladima-portfolio` exists with the scaffolded code.
-- (For CMS) A GitHub OAuth app registered — see `decap-cms-setup.md`. You'll need `CLIENT_ID` and `CLIENT_SECRET` later in this guide.
+- Cloudflare account with `hgaladima.com` already on your account (nameservers pointing to CF — same as for `ztchi.hgaladima.com` and `teach.hgaladima.com`).
+- GitHub repo [`bomino/hgaladima-portfolio`](https://github.com/bomino/hgaladima-portfolio) cloned and pushed.
+- For the CMS: a GitHub OAuth app registered. See [`decap-cms-setup.md`](./decap-cms-setup.md). `OAUTH_CLIENT_ID` and `OAUTH_CLIENT_SECRET` are required at runtime by the self-hosted OAuth Pages Functions.
 
 ## 1. Create the Pages project
 
@@ -87,8 +89,26 @@ curl -s https://hgaladima.com/ | grep -E '(canonical|og:|twitter:|application/ld
 
 Do **not** register `teach.hgaladima.com` — it's noindex by design.
 
-## 6. Iterate
+## 6. Cloudflare Email Routing (for `info@` and `consulting@` aliases)
+
+The contact page advertises two domain-routed addresses for filtering inquiries by intent:
+- `info@hgaladima.com` — general / Z-t-Chi Calculator inquiries
+- `consulting@hgaladima.com` — paid statistical-consulting inquiries
+
+To set them up:
+
+1. CF dashboard → `hgaladima.com` zone → **Email** → **Email Routing** → **Get started**.
+2. Cloudflare auto-adds the MX + SPF records on the zone; accept them.
+3. **Routing rules** → **Create address** → add `info@hgaladima.com` → forwards to a real inbox.
+4. Verify the destination inbox (CF sends a confirmation link).
+5. Repeat for `consulting@hgaladima.com`.
+
+Email Routing is **receive-only**. To reply with the alias as the From: address, configure the destination mail client (Gmail Settings → Accounts → Send mail as) with a separate SMTP provider — most solo consultants just reply from their personal inbox and that's accepted.
+
+## 7. Iterate
 
 After this one-time setup, every `git push main` auto-deploys (~60s). Decap CMS pushes count too — when Dr. G clicks **Publish** in `/admin/`, a commit lands on main, CF rebuilds, the new post is live.
 
-Rollback: CF Pages **Deployments** tab → pick any prior successful deploy → **Rollback to this deployment**.
+GitHub Actions runs a shadow build on every push (see `.github/workflows/build.yml`). It runs `npm ci`, `npm run build`, file-existence checks, and an offline link checker via `lycheeverse/lychee-action@v2`. The CF deploy is independent — GH Actions is just a regression catcher.
+
+**Rollback**: CF Pages **Deployments** tab → pick any prior successful deploy → **Rollback to this deployment**.
