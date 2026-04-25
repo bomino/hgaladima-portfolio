@@ -36,14 +36,14 @@ collections:
       - { name: layout, label: Layout, widget: hidden, default: post.njk }
       - { name: title, label: Title, widget: string }
       - { name: date, label: Publish date, widget: datetime }
-      - { name: summary, label: Summary (1-2 sentences, shows in blog index and search results), widget: text }
+      - { name: summary, label: 'Summary (1-2 sentences, shows in blog index and search results)', widget: text }
       - name: tags
         label: Tags
         widget: list
         default: ['teaching']
         summary: '{{fields.tag}}'
         field: { name: tag, label: Tag, widget: string }
-      - { name: ogImage, label: Social preview image (optional, 1200×630 recommended), widget: image, required: false }
+      - { name: ogImage, label: 'Social preview image (optional, 1200×630 recommended)', widget: image, required: false }
       - { name: permalink, label: URL slug (start and end with /), widget: string, required: false, hint: "Leave empty to auto-generate from title" }
       - { name: draft, label: Draft (uncheck to publish), widget: boolean, default: true }
       - { name: body, label: Post body, widget: markdown }
@@ -64,16 +64,16 @@ collections:
             fields:
               - { name: slug, label: URL slug (e.g. 2025-ml-breast-cancer), widget: string }
               - { name: title, label: Title, widget: string }
-              - { name: authors, label: Authors (one per line, "Last, F." format), widget: list, field: { name: author, label: Author, widget: string } }
+              - { name: authors, label: 'Authors (one per line, "Last, F." format)', widget: list, field: { name: author, label: Author, widget: string } }
               - { name: year, label: Year, widget: number, value_type: int }
-              - { name: month, label: Month (1–12, optional), widget: number, value_type: int, required: false }
+              - { name: month, label: 'Month (1–12, optional)', widget: number, value_type: int, required: false }
               - { name: journal, label: Journal, widget: string }
               - { name: volume, label: Volume, widget: string, required: false }
               - { name: issue, label: Issue, widget: string, required: false }
               - { name: pages, label: Pages (e.g. 123–135), widget: string, required: false }
               - { name: doi, label: DOI, widget: string, required: false }
               - { name: url, label: Full URL to paper (usually the DOI), widget: string, required: false }
-              - { name: tags, label: Tags (cancer, machine-learning, SDOH, methods, etc.), widget: list, field: { name: tag, label: Tag, widget: string } }
+              - { name: tags, label: 'Tags (cancer, machine-learning, SDOH, methods, etc.)', widget: list, field: { name: tag, label: Tag, widget: string } }
               - { name: summary, label: Plain-English summary (2-3 sentences), widget: text }
 
   # Talks — edits src/_data/talks.json. Adding an entry with a future date
@@ -94,9 +94,9 @@ collections:
               - { name: title, label: Talk title, widget: string }
               - { name: venue, label: Venue / conference, widget: string }
               - { name: date, label: Date (YYYY-MM-DD), widget: string, pattern: ['^\d{4}-\d{2}-\d{2}$', 'Use YYYY-MM-DD format'] }
-              - { name: location, label: Location (city, state), widget: string, required: false }
+              - { name: location, label: 'Location (city, state)', widget: string, required: false }
               - { name: type, label: Type, widget: select, options: ['Presentation', 'Invited talk', 'Keynote', 'Poster', 'Workshop', 'Panel', 'Seminar'], default: 'Presentation' }
               - { name: role, label: Role, widget: select, options: ['Presenter', 'Co-presenter', 'Speaker', 'Panelist'], default: 'Presenter', required: false }
-              - { name: description, label: Description (1-2 sentences, optional), widget: text, required: false }
+              - { name: description, label: 'Description (1-2 sentences, optional)', widget: text, required: false }
               - { name: slides, label: Slides URL (optional), widget: string, required: false }
               - { name: video, label: Video URL (optional), widget: string, required: false }
