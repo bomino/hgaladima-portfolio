@@ -48,10 +48,8 @@ collections:
       - { name: draft, label: Draft (uncheck to publish), widget: boolean, default: true }
       - { name: body, label: Post body, widget: markdown }
 
-  # Publications — edits src/_data/publications.js as a JS array of objects.
-  # Decap's "file" collection lets us treat a single data file as the thing
-  # being edited. Dr. G adds a paper by appending an entry; the site auto-
-  # generates a per-paper page on the next build via pagination.
+  # Publications — edits src/_data/publications.json. Dr. G adds a paper
+  # by appending an entry; the research page list auto-updates on build.
   - name: publications
     label: Publications
     files:
@@ -77,3 +75,28 @@ collections:
               - { name: url, label: Full URL to paper (usually the DOI), widget: string, required: false }
               - { name: tags, label: Tags (cancer, machine-learning, SDOH, methods, etc.), widget: list, field: { name: tag, label: Tag, widget: string } }
               - { name: summary, label: Plain-English summary (2-3 sentences), widget: text }
+
+  # Talks — edits src/_data/talks.json. Adding an entry with a future date
+  # auto-slots it into the Upcoming section on /speaking/; past entries go
+  # to Recent (last 3 years) or Earlier automatically.
+  - name: talks
+    label: Talks
+    files:
+      - name: talks-list
+        label: Talks list
+        file: src/_data/talks.json
+        fields:
+          - name: talks
+            label: Talks (any order — sorted by date at build time)
+            widget: list
+            summary: "{{fields.date}} — {{fields.venue}} — {{fields.title}}"
+            fields:
+              - { name: title, label: Talk title, widget: string }
+              - { name: venue, label: Venue / conference, widget: string }
+              - { name: date, label: Date (YYYY-MM-DD), widget: string, pattern: ['^\d{4}-\d{2}-\d{2}$', 'Use YYYY-MM-DD format'] }
+              - { name: location, label: Location (city, state), widget: string, required: false }
+              - { name: type, label: Type, widget: select, options: ['Presentation', 'Invited talk', 'Keynote', 'Poster', 'Workshop', 'Panel', 'Seminar'], default: 'Presentation' }
+              - { name: role, label: Role, widget: select, options: ['Presenter', 'Co-presenter', 'Speaker', 'Panelist'], default: 'Presenter', required: false }
+              - { name: description, label: Description (1-2 sentences, optional), widget: text, required: false }
+              - { name: slides, label: Slides URL (optional), widget: string, required: false }
+              - { name: video, label: Video URL (optional), widget: string, required: false }

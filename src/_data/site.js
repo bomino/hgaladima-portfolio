@@ -32,6 +32,8 @@ module.exports = {
         { label: 'About', href: '/about/' },
         { label: 'Research', href: '/research/' },
         { label: 'Teaching', href: '/teaching/' },
+        { label: 'Speaking', href: '/speaking/' },
+        { label: 'Mentoring', href: '/mentoring/' },
         { label: 'Blog', href: '/blog/' },
         { label: 'CV', href: '/cv/' },
         { label: 'Contact', href: '/contact/' },

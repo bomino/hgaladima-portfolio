@@ -1,0 +1,112 @@
+{
+  "talks": [
+    {
+      "title": "Racial and Ethnic Disparities in Breast Cancer Recurrence: A Population-Based Cohort Study",
+      "venue": "APHA 2025 Annual Meeting and Expo",
+      "date": "2025-11-03",
+      "location": "Minneapolis, MN",
+      "type": "Presentation",
+      "role": "Presenter",
+      "description": "Population-based cohort analysis of breast-cancer recurrence disparities in Virginia, with attention to racial and ethnic patterns in follow-up and surveillance."
+    },
+    {
+      "title": "Predicting Breast Cancer Recurrence Using Machine Learning: A Population-Based Approach to Inform Equitable Surveillance Strategies",
+      "venue": "APHA 2025 Annual Meeting and Expo",
+      "date": "2025-11-03",
+      "location": "Minneapolis, MN",
+      "type": "Presentation",
+      "role": "Presenter",
+      "description": "Machine-learning models applied to breast-cancer recurrence prediction, with the goal of informing population-level surveillance strategies that account for disparities."
+    },
+    {
+      "title": "Formative Evaluation of the Safe Passage Program: An Academic–Community Partnership to Reduce Gun Violence in Norfolk, Virginia",
+      "venue": "APHA 2025 Annual Meeting and Expo",
+      "date": "2025-11-03",
+      "location": "Minneapolis, MN",
+      "type": "Presentation",
+      "role": "Co-presenter",
+      "description": "Community-based evaluation of the Safe Passage Program, a Norfolk Health Department initiative, presented with Dr. Michele Kekeh."
+    },
+    {
+      "title": "Assessing Structural Barriers and Machine Learning Predictive Accuracy in Early-Onset Colorectal Cancer Outcomes",
+      "venue": "APHA 2024 Annual Meeting and Expo",
+      "date": "2024-10-27",
+      "location": "Minneapolis, MN",
+      "type": "Presentation",
+      "role": "Presenter",
+      "description": "Evaluates how structural barriers influence ML-model predictive accuracy in early-onset colorectal-cancer outcomes — with implications for equitable risk-stratification tools."
+    },
+    {
+      "title": "From Principal Component Analysis to Machine Learning: A Comparative Study on Health Indicator Development for Predicting Cancer Outcomes",
+      "venue": "APHA 2024 Annual Meeting and Expo",
+      "date": "2024-10-27",
+      "location": "Minneapolis, MN",
+      "type": "Presentation",
+      "role": "Co-presenter",
+      "description": "Comparative methods study on building health-indicator composites for cancer-outcome prediction, contrasting traditional PCA approaches with supervised ML."
+    },
+    {
+      "title": "Towards Culturally Competent Mental Health: Identifying an Asian American Population at Risk of Undiagnosed Mental Illness",
+      "venue": "APHA 2023 Annual Meeting and Expo",
+      "date": "2023-11-14",
+      "location": "Atlanta, GA",
+      "type": "Presentation",
+      "role": "Co-presenter",
+      "description": "Complex-survey analysis identifying Asian American subgroups at risk of undiagnosed mental illness, with Anne Dumadag."
+    },
+    {
+      "title": "Work Stress Levels Among Hospital-Based Lactation Consultants Amidst a Public Health Crisis",
+      "venue": "APHA 2023 Annual Meeting and Expo",
+      "date": "2023-11-14",
+      "location": "Atlanta, GA",
+      "type": "Presentation",
+      "role": "Co-presenter",
+      "description": "Cross-sectional study of occupational stress among hospital lactation consultants during the COVID-19 pandemic."
+    },
+    {
+      "title": "Using Machine Learning to Identify Influential Contextual Factors of Late-Stage Diagnosis Among Early-Onset Colorectal Cancer",
+      "venue": "APHA 2022 Annual Meeting and Expo",
+      "date": "2022-11-06",
+      "location": "Boston, MA",
+      "type": "Presentation",
+      "role": "Presenter",
+      "description": "Feature-importance analysis in ML models of late-stage colorectal-cancer diagnosis, focused on contextual and neighborhood-level predictors."
+    },
+    {
+      "title": "Assessing the Impacts of the COVID-19 Pandemic on Hispanic/Latino Farmworkers",
+      "venue": "APHA 2021 Annual Meeting and Expo",
+      "date": "2021-10-27",
+      "location": "Denver, CO",
+      "type": "Presentation",
+      "role": "Co-presenter",
+      "description": "Mixed-methods characterization of pandemic-era stressors on Hispanic/Latino farmworkers in the Eastern U.S."
+    },
+    {
+      "title": "A Combined Approach Using AUC and Propensity Score Methods",
+      "venue": "Midwest Biopharmaceutical Statistics Workshop",
+      "date": "2018-05-14",
+      "location": "Indianapolis, IN",
+      "type": "Invited talk",
+      "role": "Speaker",
+      "description": "Methods work on combining propensity-score adjustment with AUC-based risk prediction, presented at the 2018 MBSW."
+    },
+    {
+      "title": "The Performance of Different Propensity Score Methods for Estimating the Area Under the Curve",
+      "venue": "6th Workshop on Biostatistics and Bioinformatics",
+      "date": "2018-05-11",
+      "location": "Atlanta, GA",
+      "type": "Invited talk",
+      "role": "Speaker",
+      "description": "Simulation study comparing propensity-score methods for conditional-AUC estimation; Georgia State University."
+    },
+    {
+      "title": "Adjusting for Covariates Using Propensity Scores When AUC Is Used as Measure of Risk Effect",
+      "venue": "Joint Statistical Meetings",
+      "date": "2014-08-04",
+      "location": "Boston, MA",
+      "type": "Presentation",
+      "role": "Presenter",
+      "description": "Doctoral work on propensity-score methods for AUC-based risk-effect estimation, presented at the 2014 Joint Statistical Meetings."
+    }
+  ]
+}

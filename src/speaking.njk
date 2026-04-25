@@ -1,0 +1,106 @@
+---
+layout: base.njk
+title: Speaking
+description: Dr. Hadiza Galadima — invited talks, conference presentations, and academic speaking. Biostatistics, machine learning in health, and cancer-disparities research.
+permalink: /speaking/
+schemaType: CollectionPage
+---
+{%- set grouped = talks.talks | groupTalksByRecency -%}
+
+<article class="speaking">
+  <header class="speaking-header reveal">
+    <h1 class="speaking-title">Speaking</h1>
+    <p class="speaking-lede">Invited talks, conference presentations, and academic engagements on biostatistics methodology, machine learning in health outcomes, and cancer-disparities research.</p>
+  </header>
+
+  {% if grouped.upcoming.length %}
+  <section class="speaking-section reveal">
+    <h2 class="speaking-section-title">
+      <span class="speaking-section-kicker">Upcoming</span>
+    </h2>
+    <ul class="speaking-list">
+      {% for talk in grouped.upcoming %}
+        <li class="speaking-item speaking-item-upcoming">
+          <p class="speaking-date"><time datetime="{{ talk.date }}">{{ talk.date | readableDate }}</time></p>
+          <div class="speaking-body">
+            <p class="speaking-type"><span class="speaking-pill speaking-pill-upcoming">Upcoming</span> · {{ talk.type }}{% if talk.role and talk.role != 'Presenter' %} · {{ talk.role }}{% endif %}</p>
+            <h3 class="speaking-heading">{{ talk.title }}</h3>
+            <p class="speaking-venue"><em>{{ talk.venue }}</em>{% if talk.location %} · {{ talk.location }}{% endif %}</p>
+            {% if talk.description %}<p class="speaking-description">{{ talk.description }}</p>{% endif %}
+            {% if talk.slides %}<p class="speaking-links"><a href="{{ talk.slides }}" rel="external">Slides</a>{% if talk.video %} · <a href="{{ talk.video }}" rel="external">Video</a>{% endif %}</p>{% endif %}
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+
+  {% if grouped.recent.length %}
+  <section class="speaking-section reveal">
+    <h2 class="speaking-section-title">
+      <span class="speaking-section-kicker">Recent</span>
+    </h2>
+    <ul class="speaking-list">
+      {% for talk in grouped.recent %}
+        <li class="speaking-item">
+          <p class="speaking-date"><time datetime="{{ talk.date }}">{{ talk.date | readableDate }}</time></p>
+          <div class="speaking-body">
+            <p class="speaking-type">{{ talk.type }}{% if talk.role and talk.role != 'Presenter' %} · {{ talk.role }}{% endif %}</p>
+            <h3 class="speaking-heading">{{ talk.title }}</h3>
+            <p class="speaking-venue"><em>{{ talk.venue }}</em>{% if talk.location %} · {{ talk.location }}{% endif %}</p>
+            {% if talk.description %}<p class="speaking-description">{{ talk.description }}</p>{% endif %}
+            {% if talk.slides or talk.video %}<p class="speaking-links">{% if talk.slides %}<a href="{{ talk.slides }}" rel="external">Slides</a>{% endif %}{% if talk.slides and talk.video %} · {% endif %}{% if talk.video %}<a href="{{ talk.video }}" rel="external">Video</a>{% endif %}</p>{% endif %}
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+
+  {% if grouped.archive.length %}
+  <section class="speaking-section reveal">
+    <h2 class="speaking-section-title">
+      <span class="speaking-section-kicker">Earlier</span>
+    </h2>
+    <ul class="speaking-list speaking-list-compact">
+      {% for talk in grouped.archive %}
+        <li class="speaking-item">
+          <p class="speaking-date"><time datetime="{{ talk.date }}">{{ talk.date | readableDate }}</time></p>
+          <div class="speaking-body">
+            <p class="speaking-type">{{ talk.type }}</p>
+            <h3 class="speaking-heading">{{ talk.title }}</h3>
+            <p class="speaking-venue"><em>{{ talk.venue }}</em>{% if talk.location %} · {{ talk.location }}{% endif %}</p>
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+
+  <section class="speaker-kit reveal">
+    <header class="speaker-kit-head">
+      <p class="speaker-kit-kicker">Speaker kit</p>
+      <h2 class="speaker-kit-title">For conference organizers</h2>
+    </header>
+
+    <p class="speaker-kit-lede">For invited-speaker inquiries — keynotes, conference panels, departmental seminars, workshops — the following is what you'll typically need.</p>
+
+    <div class="speaker-kit-grid">
+      <div class="speaker-kit-block">
+        <h3 class="speaker-kit-block-title">Topics</h3>
+        <ul class="speaker-kit-topics">
+          <li>Machine learning for cancer-disparities research</li>
+          <li>Propensity-score methods and causal inference from observational data</li>
+          <li>Effect-sizes-first pedagogy for graduate biostatistics</li>
+          <li>Structural barriers in health-outcomes research</li>
+          <li>Open-source statistical tools in the classroom</li>
+        </ul>
+      </div>
+
+      <div class="speaker-kit-block">
+        <h3 class="speaker-kit-block-title">Bio &amp; headshot</h3>
+        <p class="speaker-kit-prose">Short and long bios and a hi-res headshot are available on request. Email <a href="mailto:consulting@hgaladima.com">consulting@hgaladima.com</a> with the event name, date, and target audience; response within two business days.</p>
+      </div>
+    </div>
+  </section>
+</article>

@@ -1402,6 +1402,446 @@ img, svg, video {
     text-decoration: none;
 }
 
+/* -------- Speaking page --------
+ * Grouped by recency (Upcoming / Recent / Earlier) via the
+ * groupTalksByRecency filter in .eleventy.js. Each entry: date column +
+ * body with type, title, venue, and optional description + links.
+ */
+
+.speaking-header {
+    margin: var(--space-2xl) 0 var(--space-xl);
+    max-width: var(--measure);
+}
+
+.speaking-title {
+    font-family: var(--font-display);
+    font-variation-settings: "opsz" 144, "SOFT" 0;
+    font-size: var(--step-5);
+    font-weight: 400;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    color: var(--ink-strong);
+    margin: 0 0 var(--space-m);
+}
+
+.speaking-lede {
+    font-family: var(--font-display);
+    font-variation-settings: "opsz" 18, "SOFT" 20;
+    font-size: var(--step-1);
+    line-height: 1.5;
+    color: var(--ink-muted);
+    max-width: 55ch;
+    margin: 0;
+    text-wrap: balance;
+}
+
+.speaking-section {
+    margin: 0 0 var(--space-2xl);
+    max-width: var(--measure);
+}
+
+.speaking-section-title {
+    margin: 0 0 var(--space-l);
+}
+
+.speaking-section-kicker {
+    font-family: var(--font-body);
+    font-size: var(--step--1);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--warm);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+}
+
+.speaking-section-kicker::before {
+    content: "";
+    display: inline-block;
+    width: 2rem;
+    height: 1px;
+    background: var(--warm);
+}
+
+.speaking-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.speaking-item {
+    display: grid;
+    grid-template-columns: minmax(7rem, 9rem) minmax(0, 1fr);
+    gap: var(--space-l);
+    padding: var(--space-m) 0;
+    border-bottom: 1px solid var(--divider);
+}
+
+.speaking-item:last-child {
+    border-bottom: 0;
+}
+
+.speaking-item-upcoming {
+    background: color-mix(in oklch, var(--warm-soft) 50%, transparent);
+    border-radius: var(--radius);
+    padding: var(--space-m) var(--space-m);
+    border-bottom: 0;
+    margin-bottom: var(--space-s);
+}
+
+.speaking-date {
+    font-family: var(--font-body);
+    font-size: var(--step--1);
+    font-weight: 500;
+    color: var(--ink-muted);
+    font-feature-settings: "tnum";
+    margin: 0;
+    letter-spacing: 0.005em;
+}
+
+.speaking-body {
+    min-width: 0;
+}
+
+.speaking-type {
+    font-size: var(--step--1);
+    color: var(--ink-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 500;
+    margin: 0 0 var(--space-2xs);
+}
+
+.speaking-pill {
+    display: inline-block;
+    padding: 0.1em 0.55em;
+    border-radius: 999px;
+    font-size: 0.85em;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    background: var(--warm);
+    color: var(--paper);
+}
+
+.speaking-pill-upcoming {
+    background: var(--warm);
+    color: #fff;
+}
+
+.speaking-heading {
+    font-family: var(--font-display);
+    font-variation-settings: "opsz" 48, "SOFT" 0;
+    font-size: var(--step-1);
+    font-weight: 400;
+    letter-spacing: -0.015em;
+    line-height: 1.2;
+    color: var(--ink-strong);
+    margin: 0 0 var(--space-2xs);
+    text-wrap: balance;
+}
+
+.speaking-venue {
+    font-size: var(--step--1);
+    color: var(--ink-muted);
+    margin: var(--space-2xs) 0;
+}
+
+.speaking-description {
+    font-family: var(--font-display);
+    font-variation-settings: "opsz" 18, "SOFT" 20;
+    font-style: italic;
+    font-size: var(--step-0);
+    line-height: 1.45;
+    color: var(--ink-muted);
+    margin: var(--space-xs) 0;
+    max-width: 60ch;
+}
+
+.speaking-links {
+    font-size: var(--step--1);
+    margin: var(--space-xs) 0 0;
+}
+
+.speaking-list-compact .speaking-item {
+    padding: var(--space-s) 0;
+}
+
+.speaking-list-compact .speaking-description {
+    display: none;
+}
+
+@media (max-width: 640px) {
+    .speaking-item {
+        grid-template-columns: 1fr;
+        gap: var(--space-2xs);
+    }
+    .speaking-date {
+        font-size: var(--step--1);
+        margin-bottom: var(--space-3xs);
+    }
+}
+
+/* Speaker kit — at the bottom of the Speaking page */
+.speaker-kit {
+    margin: var(--space-2xl) 0 var(--space-xl);
+    padding: var(--space-l) var(--space-l) var(--space-xl);
+    background: var(--surface);
+    border: 1px solid var(--divider);
+    border-radius: var(--radius-lg);
+    max-width: var(--measure);
+}
+
+.speaker-kit-head {
+    margin-bottom: var(--space-m);
+}
+
+.speaker-kit-kicker {
+    font-size: var(--step--1);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--warm);
+    margin: 0 0 var(--space-2xs);
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+}
+
+.speaker-kit-kicker::before {
+    content: "";
+    display: inline-block;
+    width: 1.75rem;
+    height: 1px;
+    background: var(--warm);
+}
+
+.speaker-kit-title {
+    font-family: var(--font-display);
+    font-variation-settings: "opsz" 72, "SOFT" 0;
+    font-size: var(--step-2);
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    color: var(--ink-strong);
+    margin: 0;
+    border: none;
+    padding-bottom: 0;
+}
+
+.speaker-kit-lede {
+    font-size: var(--step-0);
+    line-height: 1.6;
+    color: var(--ink);
+    margin: var(--space-s) 0 var(--space-l);
+    max-width: 55ch;
+}
+
+.speaker-kit-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xl);
+}
+
+.speaker-kit-block-title {
+    font-family: var(--font-body);
+    font-size: var(--step--1);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--warm);
+    margin: 0 0 var(--space-xs);
+}
+
+.speaker-kit-topics {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.speaker-kit-topics li {
+    padding: var(--space-3xs) 0;
+    border-bottom: 1px dashed var(--divider);
+    font-size: var(--step--1);
+    color: var(--ink);
+}
+
+.speaker-kit-topics li:last-child {
+    border-bottom: 0;
+}
+
+.speaker-kit-prose {
+    font-size: var(--step--1);
+    line-height: 1.6;
+    color: var(--ink-muted);
+    margin: 0;
+}
+
+@media (max-width: 640px) {
+    .speaker-kit-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-l);
+    }
+}
+
+/* -------- Mentoring page --------
+ * Audience: prospective PhD students choosing advisors at ODU's JSPH.
+ * Structure: what I'm looking for / who I advise / how to reach out.
+ */
+
+.mentoring-header {
+    margin: var(--space-2xl) 0 var(--space-xl);
+    max-width: var(--measure);
+}
+
+.mentoring-title {
+    font-family: var(--font-display);
+    font-variation-settings: "opsz" 144, "SOFT" 0;
+    font-size: var(--step-5);
+    font-weight: 400;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    color: var(--ink-strong);
+    margin: 0 0 var(--space-m);
+}
+
+.mentoring-lede {
+    font-family: var(--font-display);
+    font-variation-settings: "opsz" 18, "SOFT" 20;
+    font-size: var(--step-1);
+    line-height: 1.5;
+    color: var(--ink-muted);
+    max-width: 55ch;
+    margin: 0;
+    text-wrap: balance;
+}
+
+.mentoring-section {
+    margin: 0 0 var(--space-2xl);
+    max-width: var(--measure);
+}
+
+.mentoring-kicker {
+    font-family: var(--font-body);
+    font-size: var(--step--1);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--warm);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    margin: 0 0 var(--space-xs);
+}
+
+.mentoring-kicker::before {
+    content: "";
+    display: inline-block;
+    width: 2rem;
+    height: 1px;
+    background: var(--warm);
+}
+
+.mentoring-section-title {
+    font-family: var(--font-display);
+    font-variation-settings: "opsz" 96, "SOFT" 0;
+    font-size: var(--step-3);
+    font-weight: 400;
+    letter-spacing: -0.025em;
+    line-height: 1.15;
+    color: var(--ink-strong);
+    margin: 0 0 var(--space-m);
+    text-wrap: balance;
+    border: none;
+    padding-bottom: 0;
+}
+
+.mentoring-chair-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mentoring-chair-list li {
+    padding: var(--space-s) 0;
+    border-bottom: 1px solid var(--divider);
+    font-size: var(--step-0);
+    line-height: 1.5;
+}
+
+.mentoring-chair-list li:last-child {
+    border-bottom: 0;
+}
+
+.mentoring-chair-list strong {
+    color: var(--ink-strong);
+    font-weight: 600;
+}
+
+.mentoring-chair-list em {
+    color: var(--ink-muted);
+    font-style: italic;
+}
+
+.mentoring-reach-out {
+    background: var(--warm-soft);
+    border: 1px solid color-mix(in oklch, var(--warm) 30%, transparent);
+    border-radius: var(--radius-lg);
+    padding: var(--space-l) var(--space-l) var(--space-xl);
+    margin: var(--space-xl) 0;
+}
+
+.mentoring-checklist {
+    counter-reset: mentor-step;
+    list-style: none;
+    padding-left: 0;
+    margin: var(--space-m) 0;
+}
+
+.mentoring-checklist li {
+    counter-increment: mentor-step;
+    padding: var(--space-s) 0 var(--space-s) var(--space-xl);
+    position: relative;
+    border-bottom: 1px dashed color-mix(in oklch, var(--warm) 30%, transparent);
+    line-height: 1.55;
+}
+
+.mentoring-checklist li:last-child {
+    border-bottom: 0;
+}
+
+.mentoring-checklist li::before {
+    content: counter(mentor-step, decimal-leading-zero);
+    position: absolute;
+    left: 0;
+    top: var(--space-s);
+    font-family: var(--font-display);
+    font-variation-settings: "opsz" 48, "SOFT" 0;
+    font-size: var(--step-1);
+    color: var(--warm);
+    font-feature-settings: "tnum";
+    line-height: 1;
+    font-weight: 400;
+}
+
+.mentoring-checklist strong {
+    color: var(--ink-strong);
+}
+
+.mentoring-note {
+    max-width: var(--measure);
+    padding: var(--space-m) var(--space-l);
+    margin: var(--space-xl) 0 var(--space-2xl);
+    border-left: 2px solid var(--warm);
+    font-size: var(--step-0);
+    line-height: 1.6;
+    color: var(--ink-muted);
+    font-family: var(--font-display);
+    font-variation-settings: "opsz" 18, "SOFT" 20;
+    font-style: italic;
+}
+
 /* -------- Print stylesheet (primarily for /cv/) --------
  * Browsers hitting Ctrl-P on any page should get a clean, letterhead-style
  * layout with navigation/decoration stripped. Especially important for the
