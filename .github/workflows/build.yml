@@ -47,9 +47,13 @@ jobs:
       - name: Link check (internal URLs, fragments skipped)
         uses: lycheeverse/lychee-action@v2
         with:
+          # lychee v0.23 renamed --base (now requires URL or absolute path)
+          # to --root-dir for local root-relative link resolution. We point
+          # it at the built _site/ directory so `<a href="/about/">` etc.
+          # resolve to _site/about/.
           args: >-
             --offline
-            --base _site
+            --root-dir ${{ github.workspace }}/_site
             '_site/**/*.html'
           fail: true
         # Fragment-checking (--include-fragments) is deliberately omitted.
