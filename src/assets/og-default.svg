@@ -8,8 +8,9 @@
   <rect width="1200" height="630" fill="url(#bg)"/>
   <rect x="72" y="72" width="120" height="120" rx="20" fill="#c77d11"/>
   <text x="132" y="158" text-anchor="middle" font-family="system-ui, sans-serif" font-size="60" font-weight="700" fill="#ffffff">HG</text>
-  <text x="72" y="330" font-family="system-ui, sans-serif" font-size="72" font-weight="700" fill="#ffffff">Dr. Hadiza Galadima</text>
-  <text x="72" y="410" font-family="system-ui, sans-serif" font-size="42" fill="#ffffff" opacity="0.85">Biostatistics · Public Health · Pedagogy</text>
-  <text x="72" y="560" font-family="system-ui, sans-serif" font-size="30" fill="#c77d11" font-weight="600">hgaladima.com</text>
-  <line x1="72" y1="480" x2="280" y2="480" stroke="#c77d11" stroke-width="4"/>
+  <text x="72" y="330" font-family="system-ui, sans-serif" font-size="78" font-weight="700" fill="#ffffff">Hadiza Galadima, PhD</text>
+  <text x="72" y="410" font-family="system-ui, sans-serif" font-size="42" fill="#ffffff" opacity="0.85">Biostatistics for public health</text>
+  <text x="72" y="465" font-family="system-ui, sans-serif" font-size="28" fill="#ffffff" opacity="0.7">Research · Teaching · Open tools</text>
+  <line x1="72" y1="510" x2="280" y2="510" stroke="#c77d11" stroke-width="4"/>
+  <text x="72" y="565" font-family="system-ui, sans-serif" font-size="30" fill="#c77d11" font-weight="600">hgaladima.com</text>
 </svg>

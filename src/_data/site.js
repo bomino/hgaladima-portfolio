@@ -4,9 +4,9 @@
  */
 module.exports = {
     baseUrl: 'https://hgaladima.com',
-    name: 'Dr. Hadiza Galadima',
+    name: 'Hadiza Galadima, PhD',
     shortName: 'Hadiza Galadima',
-    role: 'Biostatistics · Public Health · Pedagogy',
+    role: 'Biostatistics for public health',
     tagline: 'Associate Professor of Biostatistics at Old Dominion University. Research and teaching at the intersection of statistical methods, public-health disparities, and open educational tools.',
     email: 'info@hgaladima.com',
 
